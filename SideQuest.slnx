@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="SideQuest.BLL/SideQuest.BLL.csproj" />
+  <Project Path="SideQuest.DAL/SideQuest.DAL.csproj" />
+  <Project Path="SideQuest.UI/SideQuest.UI.csproj" />
+</Solution>

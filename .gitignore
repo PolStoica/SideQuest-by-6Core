@@ -1,0 +1,25 @@
+# JetBrains Rider & Visual Studio specific files
+.idea/
+.vs/
+*.sln.DotSettings.user
+*.user
+riderModule.iml
+/_ReSharper.Caches/
+
+# macOS specific files
+.DS_Store
+
+# .NET compiled & package output
+bin/
+obj/
+/packages/
+out/
+Publish/
+
+# Testing
+TestResults/
+
+# SQLite Database files
+*.db
+*.db-shm
+*.db-wal

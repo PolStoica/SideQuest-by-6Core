@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net10.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <BlazorDisableThrowNavigationException>true</BlazorDisableThrowNavigationException>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\SideQuest.BLL\SideQuest.BLL.csproj" />
+      <ProjectReference Include="..\SideQuest.DAL\SideQuest.DAL.csproj" />
+    </ItemGroup>
+
+</Project>

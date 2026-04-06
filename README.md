@@ -17,7 +17,7 @@ The project uses an N-tier architecture for optimal modularity and scalability:
 * **Business Logic Layer (BLL):** .NET 10 LTS (C# 14) for validation rules and the matchmaking algorithm.
 * **Data Access Layer (DAL):** Entity Framework Core (Repository Pattern) connected to an SQLite database (configured in WAL mode for concurrency).
 
-## 👥 Team 6Core (Group 30134)
+## 👥 Team 6Core
 * **Stoica Paul-Isaac** - Team Lead / Fullstack Developer
 * **Bonațiu Alexandru** - QA Tester
 * **Pop Sebastian** - Database Administrator

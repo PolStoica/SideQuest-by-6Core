@@ -1,5 +1,4 @@
 using SideQuest.BLL.Enums;
-
 namespace SideQuest.BLL.Models;
 
 public class Event
@@ -23,7 +22,6 @@ public class Event
     public List<User> Requests { get; set; } = new();
     public Form? Form { get; set; }
 
-    // Post-event
     public int? Grade { get; set; }
     public string? EventReview { get; set; }
 

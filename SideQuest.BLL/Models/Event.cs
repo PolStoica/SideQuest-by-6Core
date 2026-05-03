@@ -4,6 +4,7 @@ namespace SideQuest.BLL.Models;
 public class Event
 {
     public string Title { get; set; }
+    public Zone EventZone { get; set; }
     public string? Description { get; set; } // Markdown
     public bool IsRecurring { get; set; }
     public Mood Mood { get; set; }

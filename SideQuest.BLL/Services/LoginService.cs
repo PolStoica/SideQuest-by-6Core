@@ -5,7 +5,7 @@ using SideQuest.BLL.Models;
 
 namespace SideQuest.BLL.Services
 {
-    User user = new User()
+    
     internal class LoginService
     {
     }

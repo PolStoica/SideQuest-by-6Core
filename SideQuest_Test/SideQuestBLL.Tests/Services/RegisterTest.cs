@@ -139,6 +139,8 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
         [Fact]
         public void Register_ShouldFail_WhenEmailAlreadyExists_EvenIfOtherDataIsDifferent()
         {
+            RegisterService.ClearUsers();
+
             var request1 = new RegisterRequest
             {
                 Email = "unique@test.com",

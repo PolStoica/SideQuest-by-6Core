@@ -38,7 +38,7 @@ namespace SideQuest.BLL.Services
 
 
         private const double MaxAllowedDistanceKm = 15.0;
-        private const double CenterLat = 46.7712; // Piața Unirii
+        private const double CenterLat = 46.7712; 
         private const double CenterLon = 23.5892;
 
         public static bool IsWithinProximity(double eventLat, double eventLon)
@@ -71,8 +71,7 @@ namespace SideQuest.BLL.Services
             if (string.IsNullOrWhiteSpace(latStr) || string.IsNullOrWhiteSpace(lonStr))
                 return false;
 
-            // Verificăm dacă există virgulă. Dacă da, considerăm input-ul invalid 
-            // pentru a forța standardul internațional de GPS (cu punct).
+        
             if (latStr.Contains(",") || lonStr.Contains(","))
                 return false;
 
@@ -85,8 +84,7 @@ namespace SideQuest.BLL.Services
 
         public static bool AreCoordinatesIdentical(Event e1, Event e2)
         {
-            // Verificăm dacă diferența este mai mică decât o marjă de eroare microscopică
-            // (Uneori 46.7700000000001 e practic același lucru cu 46.77)
+           
             const double epsilon = 0.0000001;
 
             return Math.Abs(e1.Lat - e2.Lat) < epsilon &&
@@ -96,8 +94,7 @@ namespace SideQuest.BLL.Services
 
         private static double CalculateDistance(double lat1, double lon1, double lat2, double lon2)
         {
-            // Standard Euclidean approximation for city-level distances
-            // 1 degree lat ~ 111km, 1 degree lon ~ 75km (at Cluj latitude)
+          
             double dLat = (lat2 - lat1) * 111.0;
             double dLon = (lon2 - lon1) * 75.0;
             return Math.Sqrt(dLat * dLat + dLon * dLon);

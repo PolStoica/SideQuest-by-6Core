@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿namespace SideQuest.BLL.Enums;
 
-namespace SideQuest.BLL.Enums
+public enum QuestionType
 {
-    internal class QuestionType
-    {
-    }
+    Text,
+    Number,
+    Decimal,
+    YesNo
 }

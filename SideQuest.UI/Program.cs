@@ -27,4 +27,4 @@ app.MapRazorComponents<App>()
 
 app.Run();
 
-//comentariu facut de Seba
+//comentariu facut de Sebaaa

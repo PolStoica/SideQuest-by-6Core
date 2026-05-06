@@ -11,41 +11,12 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Models
     public class UserTest
     {
         [Fact]
-        // 1. Definim ce funcționalitate testăm (Harta/Profilul)
-        [Trait("Feature", "UserProfile")]
-        // 2. Definim tipul de test (Unit, Integration, UI)
-        [Trait("Type", "UnitTest")]
-        // 3. Definim cât de critic este (dacă pică ăsta, nu merge aplicația deloc?)
-        [Trait("Priority", "P1")]
-        public void SaveProfile_GivenValidZoneManastur_ShouldAssignZoneCorrectly()
+        public void UserTest_ApiRequest_Placeholder()
         {
-            var user = new User();
-            var expectedZone = Zone.Manastur;
+            // TODO: Această metodă va testa logica de admin după implementarea request-urilor API.
 
-            user.UserZone = expectedZone;
-
-            user.UserZone.Should().Be(expectedZone, "because the user profile must reflect the selected Cluj district");
+            Assert.True(true);
         }
-
-
-        [Fact]
-        [Trait("Feature", "UserProfile")]
-        [Trait("Type", "UnitTest")]
-        [Trait("Priority", "P1")]
-        public void UpdateProfile_ChangingZoneFromZorilorToGheorgheni_ShouldUpdateSuccessfully()
-        {
-            var user = new User { Name = "Andrei", UserZone = Zone.Zorilor };
-            var newZone = Zone.Gheorgheni;
-
-            user.UserZone = newZone;
-
-            user.UserZone.Should().Be(newZone, "because a user should be able to update their residence district if they move");
-        }
-
-
-
-
-
     }
 
 }

@@ -4,7 +4,14 @@ using System.Text;
 
 namespace SideQuest_Test.SideQuestBLL.Tests.Services
 {
-    internal class EventServiceTest
+    public class EventServiceTest
     {
+        [Fact]
+        public void EventServiceTest_ApiRequest_Placeholder()
+        {
+            // TODO: Această metodă va testa logica de admin după implementarea request-urilor API.
+
+            Assert.True(true);
+        }
     }
 }

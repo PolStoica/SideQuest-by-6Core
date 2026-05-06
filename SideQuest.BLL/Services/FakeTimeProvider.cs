@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using SideQuest.BLL.Models;
 
 namespace SideQuest.BLL.Services
-{
-    
-    public class LoginService
+{ 
+
+    public class FakeTimeProvider : ITimeProvider
     {
+        public DateTime UtcNow { get; set; }
     }
 }

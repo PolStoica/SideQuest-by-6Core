@@ -66,7 +66,7 @@ export default function onboarding4({ navigation }) {
         <TouchableOpacity
           style={[styles.ctaButton, !canContinue && styles.ctaDisabled]}
           activeOpacity={canContinue ? 0.85 : 1}
-          onPress={() => canContinue && navigation.navigate('Home')}
+          onPress={() => canContinue && navigation.navigate('MapScreen')}
         >
           <Text style={styles.ctaText}>Intru în aventură! 🗺️</Text>
         </TouchableOpacity>

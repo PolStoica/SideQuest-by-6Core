@@ -8,5 +8,6 @@ public enum Category
     Educational,
     Outdoor,
     Gaming,
+    Friends,
     Other
 }

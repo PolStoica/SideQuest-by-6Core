@@ -1,10 +1,10 @@
 using SideQuest.BLL.Enums;
-
 namespace SideQuest.BLL.Models;
 
 public class Event
 {
     public string Title { get; set; }
+    public Zone EventZone { get; set; }
     public string? Description { get; set; } // Markdown
     public bool IsRecurring { get; set; }
     public Mood Mood { get; set; }
@@ -23,7 +23,6 @@ public class Event
     public List<User> Requests { get; set; } = new();
     public Form? Form { get; set; }
 
-    // Post-event
     public int? Grade { get; set; }
     public string? EventReview { get; set; }
 

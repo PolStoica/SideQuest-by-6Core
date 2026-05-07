@@ -2,25 +2,26 @@ namespace SideQuest.BLL.Enums;
 
 public enum Zone
 {
+    Unknown, // Adăugat ca default
     AndreiMureșanu,
-    Becaș,
+    Becas,
     Borhanci,
     Bulgaria,
-    BunăZiua,
+    BunaZiua,
     Centru,
-    DâmbulRotund,
+    DambulRotund,
     Europa,
-    Făget,
+    Faget,
     Gheorgheni,
     Plopilor,
     Grigorescu,
     Gruia,
     Iris,
-    ÎntreLacuri,
-    Măgura,
-    Mănăștur,
-    Mărăști,
-    Someșeni,
+    IntreLacuri,
+    Magura,
+    Manastur,
+    Marasti,
+    Someseni,
     Sopor,
     Zorilor
 }

@@ -11,6 +11,8 @@ namespace SideQuest.BLL.Models
         public bool Permissions { get; set; }
         public List<Interest> Interests { get; set; } = new();
         public Mood Mood { get; set; }
+
+        public Zone UserZone { get; set; }
         public string? ProfilePicture { get; set; }
         public int Points { get; set; }
         public List<Review> Reviews { get; set; } = new();

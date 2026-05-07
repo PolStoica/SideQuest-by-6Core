@@ -5,6 +5,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <IsPackable>false</IsPackable>
+    <RootNamespace>SideQuest_Test</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

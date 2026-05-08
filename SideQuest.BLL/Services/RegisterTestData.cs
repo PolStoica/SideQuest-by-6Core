@@ -17,10 +17,15 @@ namespace SideQuest.BLL.Services
 
             foreach (var email in invalidInputs)
                 foreach (var password in invalidInputs)
-                    foreach (var fullName in invalidInputs)
-                    {
-                        yield return new object[] { email, password, fullName };
-                    }
+                    foreach (var username in invalidInputs)
+                        foreach (var birthdate in invalidInputs)
+                            foreach (var confirmPassword in invalidInputs)
+                                foreach (var phoneNumber in invalidInputs)
+                                    foreach (var profilePicture in invalidInputs)
+                                        foreach (var selectedCategories in invalidInputs)
+                                        {
+                                            yield return new object[] { email, password, username, birthdate, confirmPassword, phoneNumber, profilePicture, selectedCategories };
+                                    }
         }
 
 

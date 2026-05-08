@@ -6,92 +6,86 @@ namespace SideQuest.BLL.Services
 {
     public static class RegisterTestsData
     {
-        public static IEnumerable<object[]> InvalidRegisterData()
+        public static IEnumerable<object[]> InvalidFieldsData()
         {
-            var invalidInputs = new[]
-            {
-            null,
-            "",
-            " "
-        };
+            var invalidStrings = new[] { null, "", " " };
 
-            foreach (var email in invalidInputs)
-                foreach (var password in invalidInputs)
-                    foreach (var username in invalidInputs)
-                        foreach (var birthdate in invalidInputs)
-                            foreach (var confirmPassword in invalidInputs)
-                                foreach (var phoneNumber in invalidInputs)
-                                    foreach (var profilePicture in invalidInputs)
-                                        foreach (var selectedCategories in invalidInputs)
-                                        {
-                                            yield return new object[] { email, password, username, birthdate, confirmPassword, phoneNumber, profilePicture, selectedCategories };
-                                    }
+            foreach (var value in invalidStrings)
+            {
+                yield return new object[] { "LastName", value };
+                yield return new object[] { "FirstName", value };
+                yield return new object[] { "County", value };
+                yield return new object[] { "City", value };
+                yield return new object[] { "Email", value };
+                yield return new object[] { "Password", value };
+                yield return new object[] { "ConfirmPassword", value };
+            }
+
+            yield return new object[] { "SelectedCategories", null }; 
+            yield return new object[] { "BirthDate", default(DateTime) }; 
         }
 
 
 
-        public static IEnumerable<object[]> InvalidFullNames()
+
+        public static IEnumerable<object[]> InvalidNames()
         {
             var invalidNames = new[]
             {
-            "John @ Doe",
-            "Test # User",
-            "Ana $ Maria",
-            "Ion & Pop",
-            "!!! Test !!!",
-            "@@@ User @@@",
-            "Ion ( Pop",
-            "Ion ) Pop",
-            "Ion - Pop",
-            "Ion * Pop",
-            "Ion} Pop",
-            "Ion {Pop",
-            "Ion[ Pop",
-            "Ion] Pop",
-            "Ion= Pop",
-            "Ion+ Pop",
-            "Ion, Pop",
-            "Ion. Pop",
-            "Ion? Pop",
-            "Ion/ Pop",
-            "Ion\\ Pop",
-            "Ion| Pop",
-            "Ion` Pop",
-            "Ion~ Pop",
-            "Ion> Pop",
-            "Ion< Pop",
-            "Ion: Pop",
-            "Ion; Pop",
-            "Ion\" Pop"
-
-        };
-
-            foreach (var fullName in invalidNames)
-                yield return new object[]
-                {
-                "test@test.com",
-                "Abc123456!",
-                fullName
-                };
-        }
-
-        public static IEnumerable<object[]> InvalidFullNameOnlySpecialCharacters()
-        {
-            var invalidNames = new[]
-            {
+            "John@",
+            "Test#",
+            "Ana$",
+            "Ion&",
+            "!!!Test",
+            "@@@User",
+            "Ion(",
+            "Ion)",
+            "Ion*",
+            "Ion}",
+            "{Pop",
+            "Ion[",
+            "Ion]",
+            "Ion=",
+            "Ion+",
+            "Ion,",
+            "Ion?",
+            "Ion/",
+            "Ion\\",
+            "Ion|",
+            "Ion`",
+            "Ion~",
+            "Ion>",
+            "Ion<",
+            "Ion:",
+            "Ion;",
+            "Ion\"",
+            "Ion_",
+            "___",
             "'",
-            "_",
             "'''''",
-            "_____"
-        };
+            "...."
 
-            foreach (var fullName in invalidNames)
-                yield return new object[]
-                {
-                "test@test.com",
-                "Abc123456!",
-                fullName
-                };
+            };
+
+            foreach (var name in invalidNames)
+                yield return new object[]{ name };
+
+        }
+
+
+        public static IEnumerable<object[]> InvalidSpaceBeforeOrAfterName()
+        {
+            var invalidNames = new[]
+            {
+            " Andrei",
+            "Andrei ",
+            "     Andrei",
+            " Andrei "
+            };
+
+            foreach (var name in invalidNames)
+                yield return new object[] { name };
+
         }
 
 

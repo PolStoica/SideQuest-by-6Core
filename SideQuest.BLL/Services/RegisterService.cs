@@ -16,28 +16,40 @@ namespace SideQuest.BLL.Services
 
             if (string.IsNullOrWhiteSpace(request.Email) ||
                 string.IsNullOrWhiteSpace(request.Password) ||
-                string.IsNullOrWhiteSpace(request.FullName))
+                string.IsNullOrWhiteSpace(request.LastName) ||
+                string.IsNullOrWhiteSpace(request.FirstName) ||
+                string.IsNullOrWhiteSpace(request.County) ||
+                string.IsNullOrWhiteSpace(request.City))
                 return false;
 
             if (request.Email != request.Email.Trim() ||
-                request.Password != request.Password.Trim() ||
-                request.FullName != request.FullName.Trim())
+                request.LastName != request.LastName.Trim() ||
+                request.FirstName != request.FirstName.Trim())
                 return false;
 
-            if (request.Email.Any(char.IsUpper) || !Regex.IsMatch(request.Email, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
+            if (!Regex.IsMatch(request.Email, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
                 return false;
 
             if (!ValidatePassword(request.Password)) return false;
-            if (!ValidateFullName(request.FullName)) return false;
+            if (!ValidateName(request.LastName)) return false;
+            if (!ValidateName(request.FirstName)) return false;
+            if (!ValidatePhoneNumber(request.PhoneNumber)) return false;
+            if (!ValidateBirthDate(request.BirthDate)) return false;
 
-            if (_users.Any(u => u.Email == request.Email)) return false;
+            if (_users.Any(u => u.Email.Equals(request.Email, StringComparison.OrdinalIgnoreCase)))
+                return false;
 
             _users.Add(new User
             {
-                Email = request.Email,
+                Email = request.Email.ToLower(),
                 Password = request.Password,
-                Name = request.FullName, 
-                Username = request.Email.Split('@')[0] 
+                LastName = request.LastName,
+                FirstName = request.FirstName,
+                County = request.County,
+                City = request.City,
+                PhoneNumber = request.PhoneNumber,
+                BirthDate = request.BirthDate,
+                Username = request.Email.Split('@')[0]
             });
 
             return true;
@@ -45,26 +57,34 @@ namespace SideQuest.BLL.Services
 
         private bool ValidatePassword(string password)
         {
-            if (password.Length < 6) return false;
-            if (!password.Any(char.IsUpper) || !password.Any(char.IsLower) ||
-                !password.Any(char.IsDigit) || !password.Any(c => "!@#$%^&*()_+-=.".Contains(c)))
+            if (password.Length < 8) return false;
+            if (!password.Any(char.IsUpper) ||
+                !password.Any(char.IsLower) ||
+                !password.Any(char.IsDigit) ||
+                !password.Any(c => "!@#$%^&*()_+-=.".Contains(c)))
                 return false;
             return true;
         }
 
-        private bool ValidateFullName(string fullName)
+        private bool ValidateName(string name)
         {
-            var words = fullName.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-            if (words.Length < 2 || words.Length > 5 || fullName.Length > 50) return false;
-
-            if (!fullName.All(c => char.IsLetter(c) || c == ' ' || c == '\'' || c == '_')) return false;
-            if (fullName.Replace(" ", "").All(c => c == '\'' || c == '_')) return false;
-
-            foreach (var word in words)
-            {
-                if (!char.IsUpper(word[0]) || word.Skip(1).Any(char.IsUpper)) return false;
-            }
+            if (name.Length < 2 || name.Length > 30) return false;
+            if (!Regex.IsMatch(name, @"^[A-Z][a-z]+$")) return false;
             return true;
+        }
+
+        private bool ValidatePhoneNumber(long phoneNumber)
+        {
+            string phoneStr = phoneNumber.ToString();
+            return phoneStr.Length >= 9 && phoneStr.Length <= 10;
+        }
+
+        private bool ValidateBirthDate(DateTime birthDate)
+        {
+            if (birthDate >= DateTime.Now) return false;
+            int age = DateTime.Now.Year - birthDate.Year;
+            if (birthDate > DateTime.Now.AddYears(-age)) age--;
+            return age >= 14 && age <= 100;
         }
 
         public static void ClearUsers() => _users.Clear();

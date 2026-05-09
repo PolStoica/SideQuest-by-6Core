@@ -19,6 +19,7 @@ namespace SideQuest.BLL.Services
                 yield return new object[] { "Email", value };
                 yield return new object[] { "Password", value };
                 yield return new object[] { "ConfirmPassword", value };
+                yield return new object[] { "ProfilePicture", value };
             }
 
             yield return new object[] { "SelectedCategories", null }; 

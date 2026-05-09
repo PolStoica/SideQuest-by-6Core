@@ -1,5 +1,6 @@
 <Solution>
   <Project Path="SideQuest.BLL/SideQuest.BLL.csproj" />
   <Project Path="SideQuest.DAL/SideQuest.DAL.csproj" />
+  <Project Path="SideQuest.TEST\SideQuest.TEST.csproj" Id="249e8aeb-90ef-4943-b4d2-81d6d6a136ea" />
   <Project Path="SideQuest.UI/SideQuest.UI.csproj" />
 </Solution>

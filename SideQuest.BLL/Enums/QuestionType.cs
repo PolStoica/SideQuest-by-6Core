@@ -1,4 +1,4 @@
-namespace SideQuest.BLL.Enums;
+﻿namespace SideQuest.BLL.Enums;
 
 public enum QuestionType
 {

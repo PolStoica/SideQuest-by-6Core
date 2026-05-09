@@ -55,6 +55,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                 County = "Cluj",
                 City = "Cluj",
                 BirthDate = new DateTime(2000, 1, 1),
+                ProfilePicture = "base64_string_sau_url_aici",
                 Email = "test@test.com",
                 PhoneNumber = 0722123456,
                 Password = "Password123!",
@@ -180,6 +181,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                 County = "Bucuresti",
                 City = "Sector 1",
                 BirthDate = new DateTime(1990, 1, 1),
+                ProfilePicture = "base64_string_sau_url_aici",
                 Email = "duplicate@test.com",
                 PhoneNumber = 722111222,
                 Password = "SafePassword123!",
@@ -194,6 +196,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                 County = "Cluj",
                 City = "Cluj-Napoca",
                 BirthDate = new DateTime(1995, 5, 10),
+                ProfilePicture = "base64_string_sau_url",
                 Email = "duplicate@test.com",
                 PhoneNumber = 733444555,
                 Password = "AnotherPassword456!",
@@ -222,6 +225,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                 County = "Bucuresti",
                 City = "Sector 1",
                 BirthDate = new DateTime(1990, 1, 1),
+                ProfilePicture = "base64_string_sau_url_aici",
                 Email = "User.Test@Example.com",
                 PhoneNumber = 722111222,
                 Password = "SafePassword123!",
@@ -236,6 +240,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                 County = "Bucuresti",
                 City = "Sector 1",
                 BirthDate = new DateTime(1990, 1, 1),
+                ProfilePicture = "base64_string_sau_url",
                 Email = "user.test@example.com",
                 PhoneNumber = 722111222,
                 Password = "SafePassword123!",
@@ -262,6 +267,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                     County = "Cluj",
                     City = "Cluj-Napoca",
                     BirthDate = new DateTime(2005, 5, 20),
+                    ProfilePicture = "base64_string_sau_url_aici",
                     PhoneNumber = 722123456,
                     Password = "Abc123456_123!",
                     ConfirmPassword = "Abc123456_123!",
@@ -287,6 +293,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                     County = "Cluj",
                     City = "Cluj-Napoca",
                     BirthDate = new DateTime(2005, 5, 20),
+                    ProfilePicture = "base64_string_sau_url_aici",
                     PhoneNumber = 722123456,
                     Password = "Abc123456_123!",
                     ConfirmPassword = "Abc123456_123!",
@@ -312,6 +319,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                     County = "Cluj",
                     City = "Cluj-Napoca",
                     BirthDate = new DateTime(2005, 5, 20),
+                    ProfilePicture = "base64_string_sau_url_aici",
                     PhoneNumber = 722123456,
                     Password = "Abc123456_123!",
                     ConfirmPassword = "Abc123456_123!",
@@ -334,6 +342,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                     County = "Cluj",
                     City = "Cluj-Napoca",
                     BirthDate = new DateTime(2000, 1, 1),
+                    ProfilePicture = "base64_string_sau_url_aici",
                     PhoneNumber = 722123456,
                     Password = "Abc123456_123!",
                     ConfirmPassword = "Abc123456_123!",
@@ -360,6 +369,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                     County = "Cluj",
                     City = "Cluj-Napoca",
                     BirthDate = new DateTime(2005, 5, 20),
+                    ProfilePicture = "base64_string_sau_url_aici",
                     PhoneNumber = 722123456,
                     Password = "Abc123456_123!",
                     ConfirmPassword = "Abc123456_123!",
@@ -384,6 +394,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                     County = "Cluj",
                     City = "Cluj-Napoca",
                     BirthDate = new DateTime(2000, 1, 1),
+                    ProfilePicture = "base64_string_sau_url_aici",
                     PhoneNumber = 722123456,
                     Password = "Abc123456_123!",
                     ConfirmPassword = "Abc123456_123!",
@@ -407,6 +418,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                     County = "Cluj",
                     City = "Cluj-Napoca",
                     BirthDate = new DateTime(2000, 1, 1),
+                    ProfilePicture = "base64_string_sau_url_aici",
                     PhoneNumber = 722123456,
                     Password = "Abc123456_123!",
                     ConfirmPassword = "Abc123456_123!",
@@ -431,6 +443,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                         County = "Cluj",
                         City = "Cluj-Napoca",
                         BirthDate = new DateTime(2005, 5, 20),
+                        ProfilePicture = "base64_string_sau_url_aici",
                         PhoneNumber = 722123456,
                         Password = "Abc123456_123!",
                         ConfirmPassword = "Abc123456_123!",
@@ -453,6 +466,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                         County = "Cluj",
                         City = "Cluj-Napoca",
                         BirthDate = new DateTime(2000, 1, 1),
+                        ProfilePicture = "base64_string_sau_url_aici",
                         PhoneNumber = 722123456,
                         Password = "Abc123456_123!",
                         ConfirmPassword = "Abc123456_123!",
@@ -475,6 +489,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                     County = "Cluj",
                     City = "Cluj-Napoca",
                     BirthDate = new DateTime(2005, 5, 20),
+                    ProfilePicture = "base64_string_sau_url_aici",
                     PhoneNumber = 722123456,
                     Password = "Abc123456_123!",
                     ConfirmPassword = "Abc123456_123!",
@@ -497,6 +512,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                     County = "Cluj",
                     City = "Cluj-Napoca",
                     BirthDate = new DateTime(2000, 1, 1),
+                    ProfilePicture = "base64_string_sau_url_aici",
                     PhoneNumber = 722123456,
                     Password = "Abc123456_123!",
                     ConfirmPassword = "Abc123456_123!",
@@ -519,6 +535,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                     County = "Cluj",
                     City = "Cluj-Napoca",
                     BirthDate = new DateTime(2000, 1, 1),
+                    ProfilePicture = "base64_string_sau_url_aici",
                     PhoneNumber = 722123456,
                     Password = "Abc123456_123!",
                     ConfirmPassword = "Abc123456_123!",
@@ -541,6 +558,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                     County = "Cluj",
                     City = "Cluj-Napoca",
                     BirthDate = new DateTime(2005, 5, 20),
+                    ProfilePicture = "base64_string_sau_url_aici",
                     PhoneNumber = 722123456,
                     Password = "Abc123456_123!",
                     ConfirmPassword = "Abc123456_123!",
@@ -566,6 +584,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                         County = "Cluj",
                         City = "Cluj-Napoca",
                         BirthDate = new DateTime(2005, 5, 20),
+                        ProfilePicture = "base64_string_sau_url_aici",
                         PhoneNumber = 722123456,
                         Password = "Abc123456_123!",
                         ConfirmPassword = "Abc123456_123!",
@@ -588,6 +607,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                     County = "Cluj",
                     City = "Cluj-Napoca",
                     BirthDate = new DateTime(2000, 1, 1),
+                    ProfilePicture = "base64_string_sau_url_aici",
                     PhoneNumber = 722123456,
                     Password = "Abc123456_123!",
                     ConfirmPassword = "Abc123456_123!",
@@ -610,6 +630,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                         County = "Cluj",
                         City = "Cluj-Napoca",
                         BirthDate = new DateTime(2000, 1, 1),
+                        ProfilePicture = "base64_string_sau_url_aici",
                         PhoneNumber = 722123456,
                         Password = "Abc123456_123!",
                         ConfirmPassword = "Abc123456_123!",
@@ -634,6 +655,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                     County = "Cluj",
                     City = "Cluj-Napoca",
                     BirthDate = new DateTime(2000, 1, 1),
+                    ProfilePicture = "base64_string_sau_url_aici",
                     PhoneNumber = 722123456,
                     Password = "Abc123456_123!",
                     ConfirmPassword = "Abc123456_123!",
@@ -659,6 +681,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                 County = "Cluj",
                 City = "Cluj-Napoca",
                 BirthDate = new DateTime(2000, 1, 1),
+                ProfilePicture = "base64_string_sau_url_aici",
                 PhoneNumber = 722123456,
                 Password = "Abc123456_123!",
                 ConfirmPassword = "Abc123456_123!",
@@ -687,6 +710,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                     County = "Cluj",
                     City = "Cluj-Napoca",
                     BirthDate = new DateTime(2000, 1, 1),
+                    ProfilePicture = "base64_string_sau_url_aici",
                     PhoneNumber = 722123456,
                     Password = "Abc123456_123!",
                     ConfirmPassword = "Abc123456_123!",
@@ -709,6 +733,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                     County = "Cluj",
                     City = "Cluj-Napoca",
                     BirthDate = new DateTime(2000, 1, 1),
+                    ProfilePicture = "base64_string_sau_url_aici",
                     PhoneNumber = 722123456,
                     Password = "Abc123456_123!",
                     ConfirmPassword = "Abc123456_123!",
@@ -731,6 +756,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                     County = "Cluj",
                     City = "Cluj-Napoca",
                     BirthDate = new DateTime(2000, 1, 1),
+                    ProfilePicture = "base64_string_sau_url_aici",
                     PhoneNumber = 722123456,
                     Password = "Abc123456_123!",
                     ConfirmPassword = "Abc123456_123!",
@@ -755,6 +781,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                     County = "Cluj",
                     City = "Cluj-Napoca",
                     BirthDate = new DateTime(2000, 1, 1),
+                    ProfilePicture = "base64_string_sau_url_aici",
                     PhoneNumber = 722123456,
                     Password = "Abc123456_123!",
                     ConfirmPassword = "Abc123456_123!",
@@ -777,6 +804,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                     County = "Cluj",
                     City = "Cluj-Napoca",
                     BirthDate = new DateTime(2000, 1, 1),
+                    ProfilePicture = "base64_string_sau_url_aici",
                     PhoneNumber = 722123456,
                     Password = "Abc123456_123!",
                     ConfirmPassword = "Abc123456_123!",
@@ -912,6 +940,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                     County = "Cluj",
                     City = "Cluj-Napoca",
                     BirthDate = new DateTime(2005, 5, 20),
+                    ProfilePicture = "base64_string_sau_url_aici",
                     Email = "space.pass@test.com",
                     PhoneNumber = 722123456,
                     Password = "        !", 
@@ -934,6 +963,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                     County = "Cluj",
                     City = "Cluj-Napoca",
                     BirthDate = new DateTime(2005, 5, 20),
+                    ProfilePicture = "base64_string_sau_url_aici",
                     Email = "long.pass@test.com",
                     PhoneNumber = 722123456,
                     Password = new string('A', 50) + "1!a", // maximum of 50 characters
@@ -958,6 +988,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                     County = "Cluj",
                     City = "Cluj-Napoca",
                     BirthDate = new DateTime(2005, 5, 20),
+                    ProfilePicture = "base64_string_sau_url_aici",
                     Email = email,
                     PhoneNumber = 722123456,
                     Password = email, 
@@ -981,6 +1012,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                     County = "Cluj",
                     City = "Cluj-Napoca",
                     BirthDate = new DateTime(2005, 5, 20),
+                    ProfilePicture = "base64_string_sau_url_aici",
                     Email = "space.internal@test.com",
                     PhoneNumber = 722123456,
                     Password = "Abc 123 !@#", 
@@ -1003,6 +1035,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                     County = "Cluj",
                     City = "Cluj-Napoca",
                     BirthDate = new DateTime(2005, 5, 20),
+                    ProfilePicture = "base64_string_sau_url_aici",
                     Email = "no.letters@test.com",
                     PhoneNumber = 722123456,
                     Password = "1234567890!@#", 
@@ -1025,6 +1058,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                     County = "Cluj",
                     City = "Cluj-Napoca",
                     BirthDate = new DateTime(2005, 5, 20),
+                    ProfilePicture = "base64_string_sau_url_aici",
                     Email = "emoji.pass@test.com",
                     PhoneNumber = 722123456,
                     Password = "Password123!😊", 
@@ -1051,6 +1085,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
         //        County = "Cluj",
         //        City = "Cluj-Napoca",
         //        BirthDate = new DateTime(2005, 5, 20),
+        //        ProfilePicture = "base64_string_sau_url_aici",
         //        Email = "integrity@test.com",
         //        PhoneNumber = 722123456,
         //        Password = originalPass,
@@ -1079,6 +1114,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                     County = "Cluj",
                     City = "Cluj-Napoca",
                     BirthDate = new DateTime(2005, 5, 20),
+                    ProfilePicture = "base64_string_sau_url_aici",
                     Email = "mismatch@test.com",
                     PhoneNumber = 722123456,
                     Password = "StrongPassword123!",
@@ -1101,6 +1137,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                     County = "Cluj",
                     City = "Cluj-Napoca",
                     BirthDate = new DateTime(2005, 5, 20),
+                    ProfilePicture = "base64_string_sau_url_aici",
                     Email = "casing.mismatch@test.com",
                     PhoneNumber = 722123456,
                     Password = "Password123!",
@@ -1403,6 +1440,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                     County = "Cluj",
                     City = "Cluj-Napoca",
                     BirthDate = new DateTime(2005, 5, 20),
+                    ProfilePicture = "base64_string_sau_url_aici",
                     Email = "duplicate@test.com",
                     PhoneNumber = 722123456,
                     Password = "Abc123456_123!",
@@ -1429,6 +1467,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                     County = "Cluj",
                     City = "Cluj-Napoca",
                     BirthDate = new DateTime(2005, 5, 20),
+                    ProfilePicture = "base64_string_sau_url_aici",
                     Email = "diacritice@test.com",
                     PhoneNumber = 722123456,
                     Password = "Abc123456_123!",
@@ -1550,6 +1589,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                     County = "Cluj",
                     City = "Cluj-Napoca",
                     BirthDate = new DateTime(2005, 5, 20),
+                    ProfilePicture = "base64_string_sau_url_aici",
                     Email = "andrei@test.com",
                     PhoneNumber = 722123456,
                     Password = "Abc123456_123!",
@@ -1575,6 +1615,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                     County = "Cluj",
                     City = "Cluj-Napoca",
                     BirthDate = new DateTime(2005, 5, 20),
+                    ProfilePicture = "base64_string_sau_url_aici",
                     Email = "andrei@test.com",
                     PhoneNumber = 722123456,
                     Password = "Abc123456_123!",
@@ -1808,6 +1849,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
             County = "Cluj",
             City = "Cluj-Napoca",
             BirthDate = new DateTime(2005, 5, 20),
+            ProfilePicture = "base64_string_sau_url_aici",
             Email = "alex.test@example.com",
             Password = "Abc123456_123!",
             ConfirmPassword = "Abc123456_123!",
@@ -1832,6 +1874,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                     County = "Cluj",
                     City = "Cluj-Napoca",
                     BirthDate = DateTime.Now.AddYears(-17),
+                    ProfilePicture = "base64_string_sau_url_aici",
                     Email = "exactly14@example.com",
                     PhoneNumber = 722123456,
                     Password = "SafePassword123!",
@@ -1854,6 +1897,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                     County = "Cluj",
                     City = "Cluj-Napoca",
                     BirthDate = DateTime.Now.AddYears(-18),
+                    ProfilePicture = "base64_string_sau_url_aici",
                     Email = "exactly18.unique@test.com",
                     PhoneNumber = 722123456,
                     Password = "SafePassword123!",
@@ -1876,6 +1920,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                     County = "Cluj",
                     City = "Cluj-Napoca",
                     BirthDate = DateTime.Now.AddYears(-18).AddDays(1),
+                    ProfilePicture = "base64_string_sau_url_aici",
                     Email = "minor.boundary@test.com",
                     PhoneNumber = 722123456,
                     Password = "SafePassword123!",
@@ -1898,6 +1943,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                     County = "Cluj",
                     City = "Cluj-Napoca",
                     BirthDate = DateTime.Now.AddYears(-18).AddDays(-1),
+                    ProfilePicture = "base64_string_sau_url_aici",
                     Email = "almost14.plus@test.com",
                     PhoneNumber = 722123456,
                     Password = "SafePassword123!",
@@ -1920,6 +1966,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                     County = "Cluj",
                     City = "Cluj-Napoca",
                     BirthDate = DateTime.Now.AddYears(-18).AddMonths(1),
+                    ProfilePicture = "base64_string_sau_url_aici",
                     Email = "almost.adult@test.com",
                     PhoneNumber = 722123456,
                     Password = "SafePassword123!",
@@ -1942,6 +1989,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                     County = "Cluj",
                     City = "Cluj-Napoca",
                     BirthDate = DateTime.Now.AddYears(-18).AddMonths(-1),
+                    ProfilePicture = "base64_string_sau_url_aici",
                     Email = "almost.adult@test.com",
                     PhoneNumber = 722123456,
                     Password = "SafePassword123!",
@@ -1964,6 +2012,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                     County = "Cluj",
                     City = "Cluj-Napoca",
                     BirthDate = DateTime.Now.AddYears(-40),
+                    ProfilePicture = "base64_string_sau_url_aici",
                     Email = "exactly35.happy@test.com",
                     PhoneNumber = 722123456,
                     Password = "SafePassword123!",
@@ -1986,6 +2035,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                     County = "Cluj",
                     City = "Cluj-Napoca",
                     BirthDate = DateTime.Now.AddYears(-40).AddDays(-1),
+                    ProfilePicture = "base64_string_sau_url_aici",
                     Email = "over35.limit@test.com",
                     PhoneNumber = 722123456,
                     Password = "SafePassword123!",
@@ -2008,6 +2058,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                     County = "Cluj",
                     City = "Cluj-Napoca",
                     BirthDate = DateTime.Now.AddYears(-40).AddMonths(1),
+                    ProfilePicture = "base64_string_sau_url_aici",
                     Email = "almost35.valid@test.com",
                     PhoneNumber = 722123456,
                     Password = "SafePassword123!",
@@ -2030,6 +2081,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                     County = "Cluj",
                     City = "Cluj-Napoca",
                     BirthDate = new DateTime(1876, 1, 1),
+                    ProfilePicture = "base64_string_sau_url_aici",
                     Email = "unrealistic.age@test.com",
                     PhoneNumber = 722123456,
                     Password = "SafePassword123!",
@@ -2052,6 +2104,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                     County = "Cluj",
                     City = "Cluj-Napoca",
                     BirthDate = DateTime.Now.AddDays(1),
+                    ProfilePicture = "base64_string_sau_url_aici",
                     Email = "future.born@test.com",
                     PhoneNumber = 722123456,
                     Password = "SafePassword123!",
@@ -2074,6 +2127,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                     County = "Cluj",
                     City = "Cluj-Napoca",
                     BirthDate = default(DateTime),
+                    ProfilePicture = "base64_string_sau_url_aici",
                     Email = "default.date.safety@test.com",
                     PhoneNumber = 722123456,
                     Password = "SafePassword123!",
@@ -2096,6 +2150,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                     County = "Cluj",
                     City = "Cluj-Napoca",
                     BirthDate = DateTime.MinValue,
+                    ProfilePicture = "base64_string_sau_url_aici",
                     Email = "min.datetime.safety@test.com",
                     PhoneNumber = 722123456,
                     Password = "SafePassword123!",
@@ -2118,6 +2173,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                     County = "Cluj",
                     City = "Cluj-Napoca",
                     BirthDate = new DateTime(9999, 12, 31),
+                    ProfilePicture = "base64_string_sau_url_aici",
                     Email = "system.max@test.com",
                     PhoneNumber = 722123456,
                     Password = "SafePassword123!",
@@ -2132,21 +2188,22 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
         [Trait("Type", "LogicTest")]
         [Trait("Priority", "P2")]
         public void Register_ShouldSucceed_WhenUserWasBornOnLeapDayInLeapYear()
-    => _registerService
-        .Register(new RegisterRequest
-        {
-            LastName = "Popescu",
-            FirstName = "Andrei",
-            County = "Cluj",
-            City = "Cluj-Napoca",
-            BirthDate = new DateTime(2008, 2, 29),
-            Email = "leapday.valid@test.com",
-            PhoneNumber = 722123456,
-            Password = "SafePassword123!",
-            ConfirmPassword = "SafePassword123!",
-            SelectedCategories = new List<string> { "Sport" }
-        })
-        .Should().BeTrue();
+            => _registerService
+                .Register(new RegisterRequest
+                {
+                    LastName = "Popescu",
+                    FirstName = "Andrei",
+                    County = "Cluj",
+                    City = "Cluj-Napoca",
+                    BirthDate = new DateTime(2008, 2, 29),
+                    ProfilePicture = "base64_string_sau_url_aici",
+                    Email = "leapday.valid@test.com",
+                    PhoneNumber = 722123456,
+                    Password = "SafePassword123!",
+                    ConfirmPassword = "SafePassword123!",
+                    SelectedCategories = new List<string> { "Sport" }
+                })
+                .Should().BeTrue();
 
         [Fact]
         [Trait("Feature", "AgeValidation")]
@@ -2160,7 +2217,8 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                     FirstName = "Andrei",
                     County = "Cluj",
                     City = "Cluj-Napoca",
-                    BirthDate = new DateTime(2008, 2, 29), 
+                    BirthDate = new DateTime(2008, 2, 29),
+                    ProfilePicture = "base64_string_sau_url_aici",
                     Email = "leapday.18years@test.com",
                     PhoneNumber = 722123456,
                     Password = "SafePassword123!",
@@ -2181,7 +2239,8 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                     FirstName = "Andrei",
                     County = "Cluj",
                     City = "Cluj-Napoca",
-                    BirthDate = new DateTime(2012, 2, 29).AddDays(1), 
+                    BirthDate = new DateTime(2012, 2, 29).AddDays(1),
+                    ProfilePicture = "base64_string_sau_url_aici",
                     Email = "leapday.minor.fail@test.com",
                     PhoneNumber = 722123456,
                     Password = "SafePassword123!",
@@ -2203,6 +2262,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                     County = "Cluj",
                     City = "Cluj-Napoca",
                     BirthDate = new DateTime(2005, 2, 28),
+                    ProfilePicture = "base64_string_sau_url_aici",
                     Email = "feb28.valid@test.com",
                     PhoneNumber = 722123456,
                     Password = "SafePassword123!",
@@ -2224,6 +2284,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                     County = "Cluj",
                     City = "Cluj-Napoca",
                     BirthDate = new DateTime(2028, 2, 29),
+                    ProfilePicture = "base64_string_sau_url_aici",
                     Email = "future.leapday@test.com",
                     PhoneNumber = 722123456,
                     Password = "SafePassword123!",
@@ -2262,21 +2323,22 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
         [Trait("Type", "EdgeCase")]
         [Trait("Priority", "P3")]
         public void Register_ShouldSucceed_WhenUserBornOnLeapDayIsExactly18OnMarch1st()
-    => _registerService
-        .Register(new RegisterRequest
-        {
-            LastName = "Popescu",
-            FirstName = "Andrei",
-            County = "Cluj",
-            City = "Cluj-Napoca",
-            BirthDate = new DateTime(2008, 2, 29),
-            Email = "leapday.majorat.ok@test.com",
-            PhoneNumber = 722123456,
-            Password = "SafePassword123!",
-            ConfirmPassword = "SafePassword123!",
-            SelectedCategories = new List<string> { "Sport" }
-        })
-        .Should().BeTrue();
+            => _registerService
+                .Register(new RegisterRequest
+                {
+                    LastName = "Popescu",
+                    FirstName = "Andrei",
+                    County = "Cluj",
+                    City = "Cluj-Napoca",
+                    BirthDate = new DateTime(2008, 2, 29),
+                    ProfilePicture = "base64_string_sau_url_aici",
+                    Email = "leapday.majorat.ok@test.com",
+                    PhoneNumber = 722123456,
+                    Password = "SafePassword123!",
+                    ConfirmPassword = "SafePassword123!",
+                    SelectedCategories = new List<string> { "Sport" }
+                })
+                .Should().BeTrue();
 
         [Fact]
         [Trait("Feature", "AgeValidation")]
@@ -2291,6 +2353,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                     County = "Cluj",
                     City = "Cluj-Napoca",
                     BirthDate = new DateTime(2008, 2, 29),
+                    ProfilePicture = "base64_string_sau_url_aici",
                     Email = "leapday.almost18@test.com",
                     PhoneNumber = 722123456,
                     Password = "SafePassword123!",
@@ -2312,6 +2375,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                     County = "Cluj",
                     City = "Cluj-Napoca",
                     BirthDate = new DateTime(2008, 2, 28),
+                    ProfilePicture = "base64_string_sau_url_aici",
                     Email = "feb28.18years@test.com",
                     PhoneNumber = 722123456,
                     Password = "SafePassword123!",
@@ -2333,6 +2397,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                     County = "Cluj",
                     City = "Cluj-Napoca",
                     BirthDate = DateTime.Now.AddYears(-18).AddDays(1),
+                    ProfilePicture = "base64_string_sau_url_aici",
                     Email = "one.day.to.adult@test.com",
                     PhoneNumber = 722123456,
                     Password = "SafePassword123!",
@@ -2354,6 +2419,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                     County = "Cluj",
                     City = "Cluj-Napoca",
                     BirthDate = new DateTime(2004, 2, 29),
+                    ProfilePicture = "base64_string_sau_url_aici",
                     Email = "leapday.adult.ok@test.com",
                     PhoneNumber = 722123456,
                     Password = "SafePassword123!",
@@ -2376,6 +2442,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                     County = "Cluj",
                     City = "Cluj-Napoca",
                     BirthDate = new DateTime(DateTime.Now.Year - 20, 1, 1),
+                    ProfilePicture = "base64_string_sau_url_aici",
                     Email = "newyear.day@test.com",
                     PhoneNumber = 722123456,
                     Password = "SafePassword123!",
@@ -2398,6 +2465,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                     County = "Cluj",
                     City = "Cluj-Napoca",
                     BirthDate = new DateTime(DateTime.Now.Year - 18, 1, 1),
+                    ProfilePicture = "base64_string_sau_url_aici",
                     Email = "newyear.18years@test.com",
                     PhoneNumber = 722123456,
                     Password = "SafePassword123!",
@@ -2420,6 +2488,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                     County = "Cluj",
                     City = "Cluj-Napoca",
                     BirthDate = new DateTimeOffset(new DateTime(2000, 1, 1), TimeSpan.FromHours(2)).DateTime,
+                    ProfilePicture = "base64_string_sau_url_aici",
                     Email = "timezone.midnight@test.com",
                     PhoneNumber = 722123456,
                     Password = "SafePassword123!",
@@ -2442,6 +2511,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                     County = "Cluj",
                     City = "Cluj-Napoca",
                     BirthDate = DateTime.SpecifyKind(DateTime.Now.AddYears(-14).Date, DateTimeKind.Utc),
+                    ProfilePicture = "base64_string_sau_url_aici",
                     Email = "timezone.boundary@test.com",
                     PhoneNumber = 722123456,
                     Password = "SafePassword123!",
@@ -2464,6 +2534,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                     County = "Cluj",
                     City = "Cluj-Napoca",
                     BirthDate = DateTime.ParseExact("01/01/05", "dd/MM/yy", null),
+                    ProfilePicture = "base64_string_sau_url_aici",
                     Email = "two.digit.year@test.com",
                     PhoneNumber = 722123456,
                     Password = "SafePassword123!",
@@ -2485,6 +2556,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                     County = "Cluj",
                     City = "Cluj-Napoca",
                     BirthDate = DateTime.ParseExact("01/01/50", "dd/MM/yy", null),
+                    ProfilePicture = "base64_string_sau_url_aici",
                     Email = "century.check@test.com",
                     PhoneNumber = 722123456,
                     Password = "SafePassword123!",
@@ -2542,6 +2614,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                     County = "Cluj",
                     City = "Cluj-Napoca",
                     BirthDate = new DateTime(2000, 01, 01),
+                    ProfilePicture = "base64_string_sau_url_aici",
                     Email = "millennium.baby@test.com",
                     PhoneNumber = 722123456,
                     Password = "SafePassword123!",
@@ -2567,6 +2640,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                     County = "Cluj",
                     City = "Cluj-Napoca",
                     BirthDate = new DateTime(2000, 01, 01),
+                    ProfilePicture = "base64_string_sau_url_aici",
                     Email = "millennium.baby@test.com",
                     PhoneNumber = 722123456,
                     Password = "SafePassword123!",
@@ -2587,6 +2661,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                 County = "Cluj",
                 City = "Cluj-Napoca",
                 BirthDate = new DateTime(2000, 01, 01),
+                ProfilePicture = "base64_string_sau_url_aici",
                 Email = "cat.test2@test.com",
                 PhoneNumber = 722123456,
                 Password = "SafePassword123!",
@@ -2606,6 +2681,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                 County = "Cluj",
                 City = "Cluj-Napoca",
                 BirthDate = new DateTime(2000, 01, 01),
+                ProfilePicture = "base64_string_sau_url_aici",
                 Email = "cat.test3@test.com",
                 PhoneNumber = 722123456,
                 Password = "SafePassword123!",
@@ -2625,6 +2701,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                 County = "Cluj",
                 City = "Cluj-Napoca",
                 BirthDate = new DateTime(2000, 01, 01),
+                ProfilePicture = "base64_string_sau_url_aici",
                 Email = "cat.test4@test.com",
                 PhoneNumber = 722123456,
                 Password = "SafePassword123!",
@@ -2644,6 +2721,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                 County = "Cluj",
                 City = "Cluj-Napoca",
                 BirthDate = new DateTime(2000, 01, 01),
+                ProfilePicture = "base64_string_sau_url_aici",
                 Email = "cat.test5@test.com",
                 PhoneNumber = 722123456,
                 Password = "SafePassword123!",
@@ -2664,6 +2742,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                 County = "Cluj",
                 City = "Cluj-Napoca",
                 BirthDate = new DateTime(2000, 01, 01),
+                ProfilePicture = "base64_string_sau_url_aici",
                 Email = "cat.test6@test.com",
                 PhoneNumber = 722123456,
                 Password = "SafePassword123!",
@@ -2683,6 +2762,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                 County = "Cluj",
                 City = "Cluj-Napoca",
                 BirthDate = new DateTime(2000, 01, 01),
+                ProfilePicture = "base64_string_sau_url_aici",
                 Email = "cat.test7@test.com",
                 PhoneNumber = 722123456,
                 Password = "SafePassword123!",
@@ -2702,6 +2782,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                 County = "Cluj",
                 City = "Cluj-Napoca",
                 BirthDate = new DateTime(2000, 01, 01),
+                ProfilePicture = "base64_string_sau_url_aici",
                 Email = "cat.test8@test.com",
                 PhoneNumber = 722123456,
                 Password = "SafePassword123!",
@@ -2720,6 +2801,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                 County = "Cluj",
                 City = "Cluj-Napoca",
                 BirthDate = new DateTime(2000, 01, 01),
+                ProfilePicture = "base64_string_sau_url_aici",
                 Email = "cat.test9@test.com",
                 PhoneNumber = 722123456,
                 Password = "SafePassword123!",
@@ -2739,6 +2821,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                 County = "Cluj",
                 City = "Cluj-Napoca",
                 BirthDate = new DateTime(2000, 01, 01),
+                ProfilePicture = "base64_string_sau_url_aici",
                 Email = "cat.test10@test.com",
                 PhoneNumber = 722123456,
                 Password = "SafePassword123!",
@@ -2756,6 +2839,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                 County = "Cluj",
                 City = "Cluj-Napoca",
                 BirthDate = new DateTime(2000, 01, 01),
+                ProfilePicture = "base64_string_sau_url_aici",
                 Email = "cat.test11@test.com",
                 PhoneNumber = 722123456,
                 Password = "SafePassword123!",
@@ -2775,6 +2859,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                 County = "Cluj",
                 City = "Cluj-Napoca",
                 BirthDate = new DateTime(2000, 01, 01),
+                ProfilePicture = "base64_string_sau_url_aici",
                 Email = "cat.test11@test.com",
                 PhoneNumber = 722123456,
                 Password = "SafePassword123!",
@@ -2794,6 +2879,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                 County = "Cluj",
                 City = "Cluj-Napoca",
                 BirthDate = new DateTime(2000, 01, 01),
+                ProfilePicture = "base64_string_sau_url_aici",
                 Email = "cat.test13@test.com",
                 PhoneNumber = 722123456,
                 Password = "SafePassword123!",
@@ -2814,6 +2900,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                 County = "Cluj",
                 City = "Cluj-Napoca",
                 BirthDate = new DateTime(2000, 01, 01),
+                ProfilePicture = "base64_string_sau_url_aici",
                 Email = "cat.test14@test.com",
                 PhoneNumber = 722123456,
                 Password = "SafePassword123!",
@@ -2833,6 +2920,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                 County = "Cluj",
                 City = "Cluj-Napoca",
                 BirthDate = new DateTime(2000, 01, 01),
+                ProfilePicture = "base64_string_sau_url_aici",
                 Email = "cat.test15@test.com",
                 PhoneNumber = 722123456,
                 Password = "SafePassword123!",
@@ -2852,6 +2940,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                 County = "Cluj",
                 City = "Cluj-Napoca",
                 BirthDate = new DateTime(2000, 01, 01),
+                ProfilePicture = "base64_string_sau_url_aici",
                 Email = "cat.test16@test.com",
                 PhoneNumber = 722123456,
                 Password = "SafePassword123!",
@@ -2871,6 +2960,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                 County = "Cluj",
                 City = "Cluj-Napoca",
                 BirthDate = new DateTime(2000, 01, 01),
+                ProfilePicture = "base64_string_sau_url_aici",
                 Email = "cat.test17@test.com",
                 PhoneNumber = 722123456,
                 Password = "SafePassword123!",
@@ -2890,6 +2980,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                 County = "Cluj",
                 City = "Cluj-Napoca",
                 BirthDate = new DateTime(2000, 01, 01),
+                ProfilePicture = "base64_string_sau_url_aici",
                 Email = "cat.test18@test.com",
                 PhoneNumber = 722123456,
                 Password = "SafePassword123!",
@@ -2909,6 +3000,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                 County = "Cluj",
                 City = "Cluj-Napoca",
                 BirthDate = new DateTime(2000, 01, 01),
+                ProfilePicture = "base64_string_sau_url_aici",
                 Email = "cat.test19@test.com",
                 PhoneNumber = 722123456,
                 Password = "SafePassword123!",
@@ -2928,6 +3020,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                 County = "Cluj",
                 City = "Cluj-Napoca",
                 BirthDate = new DateTime(2000, 01, 01),
+                ProfilePicture = "base64_string_sau_url_aici",
                 Email = "cat.test21@test.com",
                 PhoneNumber = 722123456,
                 Password = "SafePassword123!",
@@ -2947,6 +3040,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                 County = "Cluj",
                 City = "Cluj-Napoca",
                 BirthDate = new DateTime(2000, 01, 01),
+                ProfilePicture = "base64_string_sau_url_aici",
                 Email = "cat.test22@test.com",
                 PhoneNumber = 722123456,
                 Password = "SafePassword123!",
@@ -2966,6 +3060,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                 County = "Cluj",
                 City = "Cluj-Napoca",
                 BirthDate = new DateTime(2000, 01, 01),
+                ProfilePicture = "base64_string_sau_url_aici",
                 Email = "cat.test23@test.com",
                 PhoneNumber = 722123456,
                 Password = "SafePassword123!",
@@ -2985,6 +3080,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                 County = "Cluj",
                 City = "Cluj-Napoca",
                 BirthDate = new DateTime(2000, 01, 01),
+                ProfilePicture = "base64_string_sau_url_aici",
                 Email = "cat.test24@test.com",
                 PhoneNumber = 722123456,
                 Password = "SafePassword123!",
@@ -3004,6 +3100,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                 County = "Cluj",
                 City = "Cluj-Napoca",
                 BirthDate = new DateTime(2000, 01, 01),
+                ProfilePicture = "base64_string_sau_url_aici",
                 Email = "cat.test25@test.com",
                 PhoneNumber = 722123456,
                 Password = "SafePassword123!",
@@ -3023,11 +3120,1385 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                 County = "Cluj",
                 City = "Cluj-Napoca",
                 BirthDate = new DateTime(2000, 01, 01),
+                ProfilePicture = "base64_string_sau_url_aici",
                 Email = "cat.test22@test.com",
                 PhoneNumber = 722123456,
                 Password = "SafePassword123!",
                 ConfirmPassword = "SafePassword123!",
                 SelectedCategories = new List<string> { "Gaming" }
+            }).Should().BeTrue();
+
+
+        // PROFILE PICTURE
+
+
+        [Fact]
+        [Trait("Feature", "ProfilePicture")]
+        [Trait("Type", "HappyPath")]
+        [Trait("Priority", "P1")]
+        public void Register_ShouldSucceed_WhenProfilePictureIsValidJpegPath()
+            => _registerService.Register(new RegisterRequest
+            {
+                LastName = "Popescu",
+                FirstName = "Andrei",
+                County = "Cluj",
+                City = "Cluj-Napoca",
+                BirthDate = new DateTime(2000, 01, 01),
+                Email = "pic.test1@test.com",
+                PhoneNumber = 722123456,
+                Password = "SafePassword123!",
+                ConfirmPassword = "SafePassword123!",
+                SelectedCategories = new List<string> { "Sport" },
+                ProfilePicture = "C:/Images/avatar.jpg"
+            }).Should().BeTrue();
+
+        [Fact]
+        [Trait("Feature", "ProfilePicture")]
+        [Trait("Type", "HappyPath")]
+        [Trait("Priority", "P2")]
+        public void Register_ShouldSucceed_WhenProfilePictureIsValidPngPath()
+            => _registerService.Register(new RegisterRequest
+            {
+                LastName = "Popescu",
+                FirstName = "Andrei",
+                County = "Cluj",
+                City = "Cluj-Napoca",
+                BirthDate = new DateTime(2000, 01, 01),
+                Email = "pic.test2@test.com",
+                PhoneNumber = 722123456,
+                Password = "SafePassword123!",
+                ConfirmPassword = "SafePassword123!",
+                SelectedCategories = new List<string> { "Sport" },
+                ProfilePicture = "avatar.png"
+            }).Should().BeTrue();
+
+
+        [Fact]
+        [Trait("Feature", "ProfilePicture")]
+        [Trait("Type", "Negative")]
+        [Trait("Priority", "P2")]
+        public void Register_ShouldFail_WhenProfilePictureHasInvalidExtension()
+            => _registerService.Register(new RegisterRequest
+            {
+                LastName = "Popescu",
+                FirstName = "Andrei",
+                County = "Cluj",
+                City = "Cluj-Napoca",
+                BirthDate = new DateTime(2000, 01, 01),
+                Email = "pic.test6@test.com",
+                PhoneNumber = 722123456,
+                Password = "SafePassword123!",
+                ConfirmPassword = "SafePassword123!",
+                SelectedCategories = new List<string> { "Sport" },
+                ProfilePicture = "document.pdf"
+            }).Should().BeFalse();
+
+        [Fact]
+        [Trait("Feature", "ProfilePicture")]
+        [Trait("Type", "Negative")]
+        [Trait("Priority", "P2")]
+        public void Register_ShouldFail_WhenProfilePictureIsExeFile()
+            => _registerService.Register(new RegisterRequest
+            {
+                LastName = "Popescu",
+                FirstName = "Andrei",
+                County = "Cluj",
+                City = "Cluj-Napoca",
+                BirthDate = new DateTime(2000, 01, 01),
+                Email = "pic.test7@test.com",
+                PhoneNumber = 722123456,
+                Password = "SafePassword123!",
+                ConfirmPassword = "SafePassword123!",
+                SelectedCategories = new List<string> { "Sport" },
+                ProfilePicture = "virus.exe"
+            }).Should().BeFalse();
+
+        [Fact]
+        [Trait("Feature", "ProfilePicture")]
+        [Trait("Type", "Security")]
+        [Trait("Priority", "P1")]
+        public void Register_ShouldFail_WhenProfilePicturePathContainsXss()
+            => _registerService.Register(new RegisterRequest
+            {
+                LastName = "Popescu",
+                FirstName = "Andrei",
+                County = "Cluj",
+                City = "Cluj-Napoca",
+                BirthDate = new DateTime(2000, 01, 01),
+                Email = "pic.test8@test.com",
+                PhoneNumber = 722123456,
+                Password = "SafePassword123!",
+                ConfirmPassword = "SafePassword123!",
+                SelectedCategories = new List<string> { "Sport" },
+                ProfilePicture = "<script>alert(1)</script>.jpg"
+            }).Should().BeFalse();
+
+        [Fact]
+        [Trait("Feature", "ProfilePicture")]
+        [Trait("Type", "Boundary")]
+        [Trait("Priority", "P3")]
+        public void Register_ShouldFail_WhenProfilePicturePathIsTooLong()
+            => _registerService.Register(new RegisterRequest
+            {
+                LastName = "Popescu",
+                FirstName = "Andrei",
+                County = "Cluj",
+                City = "Cluj-Napoca",
+                BirthDate = new DateTime(2000, 01, 01),
+                Email = "pic.test9@test.com",
+                PhoneNumber = 722123456,
+                Password = "SafePassword123!",
+                ConfirmPassword = "SafePassword123!",
+                SelectedCategories = new List<string> { "Sport" },
+                ProfilePicture = new string('a', 2000) + ".jpg"
+            }).Should().BeFalse();
+
+        [Fact]
+        [Trait("Feature", "ProfilePicture")]
+        [Trait("Type", "HappyPath")]
+        [Trait("Priority", "P3")]
+        public void Register_ShouldSucceed_WhenProfilePictureIsBase64String()
+            => _registerService.Register(new RegisterRequest
+            {
+                LastName = "Popescu",
+                FirstName = "Andrei",
+                County = "Cluj",
+                City = "Cluj-Napoca",
+                BirthDate = new DateTime(2000, 01, 01),
+                Email = "pic.test10@test.com",
+                PhoneNumber = 722123456,
+                Password = "SafePassword123!",
+                ConfirmPassword = "SafePassword123!",
+                SelectedCategories = new List<string> { "Sport" },
+                ProfilePicture = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg=="
+            }).Should().BeTrue();
+
+        [Fact]
+        [Trait("Feature", "ProfilePicture")]
+        [Trait("Type", "Negative")]
+        [Trait("Priority", "P2")]
+        public void Register_ShouldFail_WhenProfilePictureHasNoExtension()
+            => _registerService.Register(new RegisterRequest
+            {
+                LastName = "Popescu",
+                FirstName = "Andrei",
+                County = "Cluj",
+                City = "Cluj-Napoca",
+                BirthDate = new DateTime(2000, 01, 01),
+                Email = "pic.test11@test.com",
+                PhoneNumber = 722123456,
+                Password = "SafePassword123!",
+                ConfirmPassword = "SafePassword123!",
+                SelectedCategories = new List<string> { "Sport" },
+                ProfilePicture = "my_photo_without_extension"
+            }).Should().BeFalse();
+
+        [Fact]
+        [Trait("Feature", "ProfilePicture")]
+        [Trait("Type", "Negative")]
+        [Trait("Priority", "P2")]
+        public void Register_ShouldFail_WhenProfilePictureIsJustAnExtension()
+            => _registerService.Register(new RegisterRequest
+            {
+                LastName = "Popescu",
+                FirstName = "Andrei",
+                County = "Cluj",
+                City = "Cluj-Napoca",
+                BirthDate = new DateTime(2000, 01, 01),
+                Email = "pic.test12@test.com",
+                PhoneNumber = 722123456,
+                Password = "SafePassword123!",
+                ConfirmPassword = "SafePassword123!",
+                SelectedCategories = new List<string> { "Sport" },
+                ProfilePicture = ".jpg"
+            }).Should().BeFalse();
+
+        [Fact]
+        [Trait("Feature", "ProfilePicture")]
+        [Trait("Type", "Security")]
+        [Trait("Priority", "P1")]
+        public void Register_ShouldFail_WhenProfilePicturePathContainsDirectoryTraversal()
+            => _registerService.Register(new RegisterRequest
+            {
+                LastName = "Popescu",
+                FirstName = "Andrei",
+                County = "Cluj",
+                City = "Cluj-Napoca",
+                BirthDate = new DateTime(2000, 01, 01),
+                Email = "pic.test13@test.com",
+                PhoneNumber = 722123456,
+                Password = "SafePassword123!",
+                ConfirmPassword = "SafePassword123!",
+                SelectedCategories = new List<string> { "Sport" },
+                ProfilePicture = "../../../etc/passwd"
+            }).Should().BeFalse();
+
+        [Fact]
+        [Trait("Feature", "ProfilePicture")]
+        [Trait("Type", "HappyPath")]
+        [Trait("Priority", "P3")]
+        public void Register_ShouldSucceed_WhenProfilePictureHasMultipleDots()
+            => _registerService.Register(new RegisterRequest
+            {
+                LastName = "Popescu",
+                FirstName = "Andrei",
+                County = "Cluj",
+                City = "Cluj-Napoca",
+                BirthDate = new DateTime(2000, 01, 01),
+                Email = "pic.test14@test.com",
+                PhoneNumber = 722123456,
+                Password = "SafePassword123!",
+                ConfirmPassword = "SafePassword123!",
+                SelectedCategories = new List<string> { "Sport" },
+                ProfilePicture = "user.profile.v1.final.jpg"
+            }).Should().BeTrue();
+
+        [Fact]
+        [Trait("Feature", "ProfilePicture")]
+        [Trait("Type", "Negative")]
+        [Trait("Priority", "P2")]
+        public void Register_ShouldFail_WhenProfilePictureExtensionIsTooShort()
+            => _registerService.Register(new RegisterRequest
+            {
+                LastName = "Popescu",
+                FirstName = "Andrei",
+                County = "Cluj",
+                City = "Cluj-Napoca",
+                BirthDate = new DateTime(2000, 01, 01),
+                Email = "pic.test15@test.com",
+                PhoneNumber = 722123456,
+                Password = "SafePassword123!",
+                ConfirmPassword = "SafePassword123!",
+                SelectedCategories = new List<string> { "Sport" },
+                ProfilePicture = "image.j"
+            }).Should().BeFalse();
+
+        [Fact]
+        [Trait("Feature", "ProfilePicture")]
+        [Trait("Type", "HappyPath")]
+        [Trait("Priority", "P2")]
+        public void Register_ShouldSucceed_WhenProfilePicturePathHasSpaces()
+            => _registerService.Register(new RegisterRequest
+            {
+                LastName = "Popescu",
+                FirstName = "Andrei",
+                County = "Cluj",
+                City = "Cluj-Napoca",
+                BirthDate = new DateTime(2000, 01, 01),
+                Email = "pic.test16@test.com",
+                PhoneNumber = 722123456,
+                Password = "SafePassword123!",
+                ConfirmPassword = "SafePassword123!",
+                SelectedCategories = new List<string> { "Sport" },
+                ProfilePicture = "my profile picture.png"
+            }).Should().BeTrue();
+
+        [Fact]
+        [Trait("Feature", "ProfilePicture")]
+        [Trait("Type", "Security")]
+        [Trait("Priority", "P2")]
+        public void Register_ShouldFail_WhenProfilePictureContainsNullByte()
+            => _registerService.Register(new RegisterRequest
+            {
+                LastName = "Popescu",
+                FirstName = "Andrei",
+                County = "Cluj",
+                City = "Cluj-Napoca",
+                BirthDate = new DateTime(2000, 01, 01),
+                Email = "pic.test17@test.com",
+                PhoneNumber = 722123456,
+                Password = "SafePassword123!",
+                ConfirmPassword = "SafePassword123!",
+                SelectedCategories = new List<string> { "Sport" },
+                ProfilePicture = "image.jpg\0.exe"
+            }).Should().BeFalse();
+
+        [Fact]
+        [Trait("Feature", "ProfilePicture")]
+        [Trait("Type", "HappyPath")]
+        [Trait("Priority", "P2")]
+        public void Register_ShouldSucceed_WhenProfilePicturePathIsUrl()
+            => _registerService.Register(new RegisterRequest
+            {
+                LastName = "Popescu",
+                FirstName = "Andrei",
+                County = "Cluj",
+                City = "Cluj-Napoca",
+                BirthDate = new DateTime(2000, 01, 01),
+                Email = "pic.test18@test.com",
+                PhoneNumber = 722123456,
+                Password = "SafePassword123!",
+                ConfirmPassword = "SafePassword123!",
+                SelectedCategories = new List<string> { "Sport" },
+                ProfilePicture = "https://example.com/images/user123.jpg"
+            }).Should().BeTrue();
+
+        [Fact]
+        [Trait("Feature", "ProfilePicture")]
+        [Trait("Type", "Negative")]
+        [Trait("Priority", "P2")]
+        public void Register_ShouldFail_WhenProfilePicturePathIsJustSlash()
+            => _registerService.Register(new RegisterRequest
+            {
+                LastName = "Popescu",
+                FirstName = "Andrei",
+                County = "Cluj",
+                City = "Cluj-Napoca",
+                BirthDate = new DateTime(2000, 01, 01),
+                Email = "pic.test19@test.com",
+                PhoneNumber = 722123456,
+                Password = "SafePassword123!",
+                ConfirmPassword = "SafePassword123!",
+                SelectedCategories = new List<string> { "Sport" },
+                ProfilePicture = "/"
+            }).Should().BeFalse();
+
+        [Fact]
+        [Trait("Feature", "ProfilePicture")]
+        [Trait("Type", "Negative")]
+        [Trait("Priority", "P2")]
+        public void Register_ShouldFail_WhenProfilePictureHasInvalidChars()
+            => _registerService.Register(new RegisterRequest
+            {
+                LastName = "Popescu",
+                FirstName = "Andrei",
+                County = "Cluj",
+                City = "Cluj-Napoca",
+                BirthDate = new DateTime(2000, 01, 01),
+                Email = "pic.test20@test.com",
+                PhoneNumber = 722123456,
+                Password = "SafePassword123!",
+                ConfirmPassword = "SafePassword123!",
+                SelectedCategories = new List<string> { "Sport" },
+                ProfilePicture = "image|*.jpg"
+            }).Should().BeFalse();
+
+        [Fact]
+        [Trait("Feature", "ProfilePicture")]
+        [Trait("Type", "HappyPath")]
+        [Trait("Priority", "P2")]
+        public void Register_ShouldSucceed_WhenProfilePictureIsBmp()
+            => _registerService.Register(new RegisterRequest
+            {
+                LastName = "Popescu",
+                FirstName = "Andrei",
+                County = "Cluj",
+                City = "Cluj-Napoca",
+                BirthDate = new DateTime(2000, 01, 01),
+                Email = "pic.test21@test.com",
+                PhoneNumber = 722123456,
+                Password = "SafePassword123!",
+                ConfirmPassword = "SafePassword123!",
+                SelectedCategories = new List<string> { "Sport" },
+                ProfilePicture = "legacy.bmp"
+            }).Should().BeTrue();
+
+        [Fact]
+        [Trait("Feature", "ProfilePicture")]
+        [Trait("Type", "Negative")]
+        [Trait("Priority", "P3")]
+        public void Register_ShouldFail_WhenProfilePictureIsTooSmallBase64()
+            => _registerService.Register(new RegisterRequest
+            {
+                LastName = "Popescu",
+                FirstName = "Andrei",
+                County = "Cluj",
+                City = "Cluj-Napoca",
+                BirthDate = new DateTime(2000, 01, 01),
+                Email = "pic.test22@test.com",
+                PhoneNumber = 722123456,
+                Password = "SafePassword123!",
+                ConfirmPassword = "SafePassword123!",
+                SelectedCategories = new List<string> { "Sport" },
+                ProfilePicture = "data:image/png;base64,"
+            }).Should().BeFalse();
+
+        [Fact]
+        [Trait("Feature", "ProfilePicture")]
+        [Trait("Type", "HappyPath")]
+        [Trait("Priority", "P3")]
+        public void Register_ShouldBeCaseInsensitive_ForProfilePictureExtension()
+            => _registerService.Register(new RegisterRequest
+            {
+                LastName = "Popescu",
+                FirstName = "Andrei",
+                County = "Cluj",
+                City = "Cluj-Napoca",
+                BirthDate = new DateTime(2000, 01, 01),
+                Email = "pic.test23@test.com",
+                PhoneNumber = 722123456,
+                Password = "SafePassword123!",
+                ConfirmPassword = "SafePassword123!",
+                SelectedCategories = new List<string> { "Sport" },
+                ProfilePicture = "IMAGE.JPG"
+            }).Should().BeTrue();
+
+        [Fact]
+        [Trait("Feature", "ProfilePicture")]
+        [Trait("Type", "HappyPath")]
+        [Trait("Priority", "P3")]
+        public void Register_ShouldSucceed_WhenProfilePicturePathHasSpecialSymbols()
+            => _registerService.Register(new RegisterRequest
+            {
+                LastName = "Popescu",
+                FirstName = "Andrei",
+                County = "Cluj",
+                City = "Cluj-Napoca",
+                BirthDate = new DateTime(2000, 01, 01),
+                Email = "pic.test24@test.com",
+                PhoneNumber = 722123456,
+                Password = "SafePassword123!",
+                ConfirmPassword = "SafePassword123!",
+                SelectedCategories = new List<string> { "Sport" },
+                ProfilePicture = "photo-2026_@_v1.png"
+            }).Should().BeTrue();
+
+        [Fact]
+        [Trait("Feature", "ProfilePicture")]
+        [Trait("Type", "Negative")]
+        [Trait("Priority", "P1")]
+        public void Register_ShouldFail_WhenProfilePictureIsNumericString()
+            => _registerService.Register(new RegisterRequest
+            {
+                LastName = "Popescu",
+                FirstName = "Andrei",
+                County = "Cluj",
+                City = "Cluj-Napoca",
+                BirthDate = new DateTime(2000, 01, 01),
+                Email = "pic.test25@test.com",
+                PhoneNumber = 722123456,
+                Password = "SafePassword123!",
+                ConfirmPassword = "SafePassword123!",
+                SelectedCategories = new List<string> { "Sport" },
+                ProfilePicture = "123456789"
+            }).Should().BeFalse();
+
+
+        [Fact]
+        [Trait("Feature", "ProfilePicture")]
+        [Trait("Type", "Negative")]
+        [Trait("Priority", "P2")]
+        public void Register_ShouldFail_WhenProfilePictureIsSvgWithEmbeddedScript()
+            => _registerService.Register(new RegisterRequest
+            {
+                LastName = "Popescu",
+                FirstName = "Andrei",
+                County = "Cluj",
+                City = "Cluj-Napoca",
+                BirthDate = new DateTime(2000, 01, 01),
+                Email = "pic.test26@test.com",
+                PhoneNumber = 722123456,
+                Password = "SafePassword123!",
+                ConfirmPassword = "SafePassword123!",
+                SelectedCategories = new List<string> { "Sport" },
+                ProfilePicture = "<svg onload=alert(1)>"
+            }).Should().BeFalse();
+
+
+        [Fact]
+        [Trait("Feature", "ProfilePicture")]
+        [Trait("Type", "HappyPath")]
+        [Trait("Priority", "P3")]
+        public void Register_ShouldSucceed_WhenProfilePictureIsWebPFormat()
+            => _registerService.Register(new RegisterRequest
+            {
+                LastName = "Popescu",
+                FirstName = "Andrei",
+                County = "Cluj",
+                City = "Cluj-Napoca",
+                BirthDate = new DateTime(2000, 01, 01),
+                Email = "pic.test27@test.com",
+                PhoneNumber = 722123456,
+                Password = "SafePassword123!",
+                ConfirmPassword = "SafePassword123!",
+                SelectedCategories = new List<string> { "Sport" },
+                ProfilePicture = "modern_image.webp"
+            }).Should().BeTrue();
+
+        [Fact]
+        [Trait("Feature", "ProfilePicture")]
+        [Trait("Type", "Negative")]
+        [Trait("Priority", "P2")]
+        public void Register_ShouldFail_WhenProfilePictureHasDoubleExtension()
+            => _registerService.Register(new RegisterRequest
+            {
+                LastName = "Popescu",
+                FirstName = "Andrei",
+                County = "Cluj",
+                City = "Cluj-Napoca",
+                BirthDate = new DateTime(2000, 01, 01),
+                Email = "pic.test28@test.com",
+                PhoneNumber = 722123456,
+                Password = "SafePassword123!",
+                ConfirmPassword = "SafePassword123!",
+                SelectedCategories = new List<string> { "Sport" },
+                ProfilePicture = "image.png.txt"
+            }).Should().BeFalse();
+
+        [Fact]
+        [Trait("Feature", "ProfilePicture")]
+        [Trait("Type", "Boundary")]
+        [Trait("Priority", "P3")]
+        public void Register_ShouldFail_WhenProfilePicturePathContainsOnlyDots()
+            => _registerService.Register(new RegisterRequest
+            {
+                LastName = "Popescu",
+                FirstName = "Andrei",
+                County = "Cluj",
+                City = "Cluj-Napoca",
+                BirthDate = new DateTime(2000, 01, 01),
+                Email = "pic.test29@test.com",
+                PhoneNumber = 722123456,
+                Password = "SafePassword123!",
+                ConfirmPassword = "SafePassword123!",
+                SelectedCategories = new List<string> { "Sport" },
+                ProfilePicture = "...."
+            }).Should().BeFalse();
+
+        [Fact]
+        [Trait("Feature", "ProfilePicture")]
+        [Trait("Type", "HappyPath")]
+        [Trait("Priority", "P3")]
+        public void Register_ShouldFail_WhenProfilePictureIsGif()
+            => _registerService.Register(new RegisterRequest
+            {
+                LastName = "Popescu",
+                FirstName = "Andrei",
+                County = "Cluj",
+                City = "Cluj-Napoca",
+                BirthDate = new DateTime(2000, 01, 01),
+                Email = "pic.test30@test.com",
+                PhoneNumber = 722123456,
+                Password = "SafePassword123!",
+                ConfirmPassword = "SafePassword123!",
+                SelectedCategories = new List<string> { "Sport" },
+                ProfilePicture = "animated_avatar.gif"
+            }).Should().BeFalse();
+
+        [Fact]
+        [Trait("Feature", "ProfilePicture")]
+        [Trait("Type", "Security")]
+        [Trait("Priority", "P1")]
+        public void Register_ShouldFail_WhenProfilePicturePathContainsCommandInjection()
+            => _registerService.Register(new RegisterRequest
+            {
+                LastName = "Popescu",
+                FirstName = "Andrei",
+                County = "Cluj",
+                City = "Cluj-Napoca",
+                BirthDate = new DateTime(2000, 01, 01),
+                Email = "pic.test31@test.com",
+                PhoneNumber = 722123456,
+                Password = "SafePassword123!",
+                ConfirmPassword = "SafePassword123!",
+                SelectedCategories = new List<string> { "Sport" },
+                ProfilePicture = "image.jpg; rm -rf /"
+            }).Should().BeFalse();
+
+        [Fact]
+        [Trait("Feature", "ProfilePicture")]
+        [Trait("Type", "HappyPath")]
+        [Trait("Priority", "P2")]
+        public void Register_ShouldSucceed_WhenProfilePictureIsNetworkPath()
+            => _registerService.Register(new RegisterRequest
+            {
+                LastName = "Popescu",
+                FirstName = "Andrei",
+                County = "Cluj",
+                City = "Cluj-Napoca",
+                BirthDate = new DateTime(2000, 01, 01),
+                Email = "pic.test32@test.com",
+                PhoneNumber = 722123456,
+                Password = "SafePassword123!",
+                ConfirmPassword = "SafePassword123!",
+                SelectedCategories = new List<string> { "Sport" },
+                ProfilePicture = @"\\Server\Shares\Images\profile.jpg"
+            }).Should().BeTrue();
+
+        [Fact]
+        [Trait("Feature", "ProfilePicture")]
+        [Trait("Type", "Negative")]
+        [Trait("Priority", "P2")]
+        public void Register_ShouldFail_WhenProfilePictureIsHiddenFile()
+            => _registerService.Register(new RegisterRequest
+            {
+                LastName = "Popescu",
+                FirstName = "Andrei",
+                County = "Cluj",
+                City = "Cluj-Napoca",
+                BirthDate = new DateTime(2000, 01, 01),
+                Email = "pic.test33@test.com",
+                PhoneNumber = 722123456,
+                Password = "SafePassword123!",
+                ConfirmPassword = "SafePassword123!",
+                SelectedCategories = new List<string> { "Sport" },
+                ProfilePicture = ".htaccess"
+            }).Should().BeFalse();
+
+        [Fact]
+        [Trait("Feature", "ProfilePicture")]
+        [Trait("Type", "HappyPath")]
+        [Trait("Priority", "P3")]
+        public void Register_ShouldSucceed_WhenProfilePictureNameHasNonAsciiCharacters()
+            => _registerService.Register(new RegisterRequest
+            {
+                LastName = "Popescu",
+                FirstName = "Andrei",
+                County = "Cluj",
+                City = "Cluj-Napoca",
+                BirthDate = new DateTime(2000, 01, 01),
+                Email = "pic.test34@test.com",
+                PhoneNumber = 722123456,
+                Password = "SafePassword123!",
+                ConfirmPassword = "SafePassword123!",
+                SelectedCategories = new List<string> { "Sport" },
+                ProfilePicture = "poză_profil_2026.jpg"
+            }).Should().BeTrue();
+
+        [Fact]
+        [Trait("Feature", "ProfilePicture")]
+        [Trait("Type", "Negative")]
+        [Trait("Priority", "P2")]
+        public void Register_ShouldFail_WhenProfilePictureIsSystemReservedName()
+            => _registerService.Register(new RegisterRequest
+            {
+                LastName = "Popescu",
+                FirstName = "Andrei",
+                County = "Cluj",
+                City = "Cluj-Napoca",
+                BirthDate = new DateTime(2000, 01, 01),
+                Email = "pic.test35@test.com",
+                PhoneNumber = 722123456,
+                Password = "SafePassword123!",
+                ConfirmPassword = "SafePassword123!",
+                SelectedCategories = new List<string> { "Sport" },
+                ProfilePicture = "CON.png"
+            }).Should().BeFalse();
+
+        [Fact]
+        [Trait("Feature", "ProfilePicture")]
+        [Trait("Type", "HappyPath")]
+        [Trait("Priority", "P2")]
+        public void Register_ShouldSucceed_WhenProfilePicturePathHasTrailingSpaces()
+            => _registerService.Register(new RegisterRequest
+            {
+                LastName = "Popescu",
+                FirstName = "Andrei",
+                County = "Cluj",
+                City = "Cluj-Napoca",
+                BirthDate = new DateTime(2000, 01, 01),
+                Email = "pic.test36@test.com",
+                PhoneNumber = 722123456,
+                Password = "SafePassword123!",
+                ConfirmPassword = "SafePassword123!",
+                SelectedCategories = new List<string> { "Sport" },
+                ProfilePicture = "avatar.jpg   "
+            }).Should().BeTrue();
+
+        [Fact]
+        [Trait("Feature", "ProfilePicture")]
+        [Trait("Type", "Negative")]
+        [Trait("Priority", "P1")]
+        public void Register_ShouldFail_WhenProfilePictureIsEmailAddress()
+            => _registerService.Register(new RegisterRequest
+            {
+                LastName = "Popescu",
+                FirstName = "Andrei",
+                County = "Cluj",
+                City = "Cluj-Napoca",
+                BirthDate = new DateTime(2000, 01, 01),
+                Email = "pic.test37@test.com",
+                PhoneNumber = 722123456,
+                Password = "SafePassword123!",
+                ConfirmPassword = "SafePassword123!",
+                SelectedCategories = new List<string> { "Sport" },
+                ProfilePicture = "test@test.com"
+            }).Should().BeFalse();
+
+        [Fact]
+        [Trait("Feature", "ProfilePicture")]
+        [Trait("Type", "HappyPath")]
+        [Trait("Priority", "P3")]
+        public void Register_ShouldSucceed_WhenProfilePictureIsAvifFormat()
+            => _registerService.Register(new RegisterRequest
+            {
+                LastName = "Popescu",
+                FirstName = "Andrei",
+                County = "Cluj",
+                City = "Cluj-Napoca",
+                BirthDate = new DateTime(2000, 01, 01),
+                Email = "pic.test38@test.com",
+                PhoneNumber = 722123456,
+                Password = "SafePassword123!",
+                ConfirmPassword = "SafePassword123!",
+                SelectedCategories = new List<string> { "Sport" },
+                ProfilePicture = "profile.avif"
+            }).Should().BeTrue();
+
+        [Fact]
+        [Trait("Feature", "ProfilePicture")]
+        [Trait("Type", "Negative")]
+        [Trait("Priority", "P2")]
+        public void Register_ShouldFail_WhenProfilePictureContainsEncodedDirectoryTraversal()
+            => _registerService.Register(new RegisterRequest
+            {
+                LastName = "Popescu",
+                FirstName = "Andrei",
+                County = "Cluj",
+                City = "Cluj-Napoca",
+                BirthDate = new DateTime(2000, 01, 01),
+                Email = "pic.test39@test.com",
+                PhoneNumber = 722123456,
+                Password = "SafePassword123!",
+                ConfirmPassword = "SafePassword123!",
+                SelectedCategories = new List<string> { "Sport" },
+                ProfilePicture = "%2e%2e%2f%2e%2e%2fetc%2fpasswd"
+            }).Should().BeFalse();
+
+        [Fact]
+        [Trait("Feature", "ProfilePicture")]
+        [Trait("Type", "HappyPath")]
+        [Trait("Priority", "P2")]
+        public void Register_ShouldSucceed_WhenProfilePictureHasQueryString()
+            => _registerService.Register(new RegisterRequest
+            {
+                LastName = "Popescu",
+                FirstName = "Andrei",
+                County = "Cluj",
+                City = "Cluj-Napoca",
+                BirthDate = new DateTime(2000, 01, 01),
+                Email = "pic.test40@test.com",
+                PhoneNumber = 722123456,
+                Password = "SafePassword123!",
+                ConfirmPassword = "SafePassword123!",
+                SelectedCategories = new List<string> { "Sport" },
+                ProfilePicture = "https://cdn.com/img.jpg?size=large&format=png"
+            }).Should().BeTrue();
+
+        [Fact]
+        [Trait("Feature", "ProfilePicture")]
+        [Trait("Type", "Negative")]
+        [Trait("Priority", "P2")]
+        public void Register_ShouldFail_WhenProfilePictureIsJustTheProtocol()
+            => _registerService.Register(new RegisterRequest
+            {
+                LastName = "Popescu",
+                FirstName = "Andrei",
+                County = "Cluj",
+                City = "Cluj-Napoca",
+                BirthDate = new DateTime(2000, 01, 01),
+                Email = "pic.test41@test.com",
+                PhoneNumber = 722123456,
+                Password = "SafePassword123!",
+                ConfirmPassword = "SafePassword123!",
+                SelectedCategories = new List<string> { "Sport" },
+                ProfilePicture = "https://"
+            }).Should().BeFalse();
+
+        [Fact]
+        [Trait("Feature", "ProfilePicture")]
+        [Trait("Type", "HappyPath")]
+        [Trait("Priority", "P3")]
+        public void Register_ShouldSucceed_WhenProfilePictureNameHasEmoji()
+            => _registerService.Register(new RegisterRequest
+            {
+                LastName = "Popescu",
+                FirstName = "Andrei",
+                County = "Cluj",
+                City = "Cluj-Napoca",
+                BirthDate = new DateTime(2000, 01, 01),
+                Email = "pic.test42@test.com",
+                PhoneNumber = 722123456,
+                Password = "SafePassword123!",
+                ConfirmPassword = "SafePassword123!",
+                SelectedCategories = new List<string> { "Sport" },
+                ProfilePicture = "me_😊.png"
+            }).Should().BeTrue();
+
+        [Fact]
+        [Trait("Feature", "ProfilePicture")]
+        [Trait("Type", "Negative")]
+        [Trait("Priority", "P2")]
+        public void Register_ShouldFail_WhenProfilePicturePathIsRelativeAndEscapesRoot()
+            => _registerService.Register(new RegisterRequest
+            {
+                LastName = "Popescu",
+                FirstName = "Andrei",
+                County = "Cluj",
+                City = "Cluj-Napoca",
+                BirthDate = new DateTime(2000, 01, 01),
+                Email = "pic.test43@test.com",
+                PhoneNumber = 722123456,
+                Password = "SafePassword123!",
+                ConfirmPassword = "SafePassword123!",
+                SelectedCategories = new List<string> { "Sport" },
+                ProfilePicture = "~/../../windows/system32/cmd.exe"
+            }).Should().BeFalse();
+
+        [Fact]
+        [Trait("Feature", "ProfilePicture")]
+        [Trait("Type", "HappyPath")]
+        [Trait("Priority", "P2")]
+        public void Register_ShouldSucceed_WhenProfilePictureIsHeicFormat()
+            => _registerService.Register(new RegisterRequest
+            {
+                LastName = "Popescu",
+                FirstName = "Andrei",
+                County = "Cluj",
+                City = "Cluj-Napoca",
+                BirthDate = new DateTime(2000, 01, 01),
+                Email = "pic.test44@test.com",
+                PhoneNumber = 722123456,
+                Password = "SafePassword123!",
+                ConfirmPassword = "SafePassword123!",
+                SelectedCategories = new List<string> { "Sport" },
+                ProfilePicture = "iphone_photo.heic"
+            }).Should().BeTrue();
+
+        [Fact]
+        [Trait("Feature", "ProfilePicture")]
+        [Trait("Type", "Negative")]
+        [Trait("Priority", "P2")]
+        public void Register_ShouldFail_WhenProfilePictureIsZipFile()
+            => _registerService.Register(new RegisterRequest
+            {
+                LastName = "Popescu",
+                FirstName = "Andrei",
+                County = "Cluj",
+                City = "Cluj-Napoca",
+                BirthDate = new DateTime(2000, 01, 01),
+                Email = "pic.test45@test.com",
+                PhoneNumber = 722123456,
+                Password = "SafePassword123!",
+                ConfirmPassword = "SafePassword123!",
+                SelectedCategories = new List<string> { "Sport" },
+                ProfilePicture = "photos.zip"
+            }).Should().BeFalse();
+
+        [Fact]
+        [Trait("Feature", "ProfilePicture")]
+        [Trait("Type", "HappyPath")]
+        [Trait("Priority", "P2")]
+        public void Register_ShouldSucceed_WhenProfilePictureIsTiff()
+            => _registerService.Register(new RegisterRequest
+            {
+                LastName = "Popescu",
+                FirstName = "Andrei",
+                County = "Cluj",
+                City = "Cluj-Napoca",
+                BirthDate = new DateTime(2000, 01, 01),
+                Email = "pic.test46@test.com",
+                PhoneNumber = 722123456,
+                Password = "SafePassword123!",
+                ConfirmPassword = "SafePassword123!",
+                SelectedCategories = new List<string> { "Sport" },
+                ProfilePicture = "high_quality.tiff"
+            }).Should().BeTrue();
+
+        [Fact]
+        [Trait("Feature", "ProfilePicture")]
+        [Trait("Type", "Security")]
+        [Trait("Priority", "P1")]
+        public void Register_ShouldFail_WhenProfilePictureHasLdapInjection()
+            => _registerService.Register(new RegisterRequest
+            {
+                LastName = "Popescu",
+                FirstName = "Andrei",
+                County = "Cluj",
+                City = "Cluj-Napoca",
+                BirthDate = new DateTime(2000, 01, 01),
+                Email = "pic.test47@test.com",
+                PhoneNumber = 722123456,
+                Password = "SafePassword123!",
+                ConfirmPassword = "SafePassword123!",
+                SelectedCategories = new List<string> { "Sport" },
+                ProfilePicture = "admin*)(|(password=*))"
+            }).Should().BeFalse();
+
+        [Fact]
+        [Trait("Feature", "ProfilePicture")]
+        [Trait("Type", "HappyPath")]
+        [Trait("Priority", "P3")]
+        public void Register_ShouldSucceed_WhenProfilePictureIsSdrFormat()
+            => _registerService.Register(new RegisterRequest
+            {
+                LastName = "Popescu",
+                FirstName = "Andrei",
+                County = "Cluj",
+                City = "Cluj-Napoca",
+                BirthDate = new DateTime(2000, 01, 01),
+                Email = "pic.test48@test.com",
+                PhoneNumber = 722123456,
+                Password = "SafePassword123!",
+                ConfirmPassword = "SafePassword123!",
+                SelectedCategories = new List<string> { "Sport" },
+                ProfilePicture = "image_sdr.jpg"
+            }).Should().BeTrue();
+
+        [Fact]
+        [Trait("Feature", "ProfilePicture")]
+        [Trait("Type", "Negative")]
+        [Trait("Priority", "P3")]
+        public void Register_ShouldFail_WhenProfilePictureIsDataUriWithInvalidMime()
+            => _registerService.Register(new RegisterRequest
+            {
+                LastName = "Popescu",
+                FirstName = "Andrei",
+                County = "Cluj",
+                City = "Cluj-Napoca",
+                BirthDate = new DateTime(2000, 01, 01),
+                Email = "pic.test49@test.com",
+                PhoneNumber = 722123456,
+                Password = "SafePassword123!",
+                ConfirmPassword = "SafePassword123!",
+                SelectedCategories = new List<string> { "Sport" },
+                ProfilePicture = "data:text/plain;base64,SGVsbG8="
+            }).Should().BeFalse();
+
+        [Fact]
+        [Trait("Feature", "ProfilePicture")]
+        [Trait("Type", "HappyPath")]
+        [Trait("Priority", "P2")]
+        public void Register_ShouldSucceed_WhenProfilePictureIsJfif()
+            => _registerService.Register(new RegisterRequest
+            {
+                LastName = "Popescu",
+                FirstName = "Andrei",
+                County = "Cluj",
+                City = "Cluj-Napoca",
+                BirthDate = new DateTime(2000, 01, 01),
+                Email = "pic.test50@test.com",
+                PhoneNumber = 722123456,
+                Password = "SafePassword123!",
+                ConfirmPassword = "SafePassword123!",
+                SelectedCategories = new List<string> { "Sport" },
+                ProfilePicture = "photo.jfif"
+            }).Should().BeTrue();
+
+
+        // CITY & COUNTY
+
+
+        [Fact]
+        [Trait("Feature", "Location")]
+        [Trait("Type", "HappyPath")]
+        [Trait("Priority", "P1")]
+        public void Register_ShouldSucceed_WhenCityHasDiacritics()
+            => _registerService.Register(new RegisterRequest
+            {
+                LastName = "Ionescu",
+                FirstName = "Maria",
+                County = "Brasov",
+                City = "Făgăraș",
+                BirthDate = new DateTime(1995, 05, 20),
+                Email = "loc.test2@test.com",
+                PhoneNumber = 744111222,
+                Password = "StrongPass123!",
+                ConfirmPassword = "StrongPass123!",
+                SelectedCategories = new List<string> { "Sport" },
+                ProfilePicture = "avatar.jpg"
+            }).Should().BeTrue();
+
+
+        [Fact]
+        [Trait("Feature", "Location")]
+        [Trait("Type", "HappyPath")]
+        [Trait("Priority", "P1")]
+        public void Register_ShouldSucceed_WhenCountyHasDiacritics()
+            => _registerService.Register(new RegisterRequest
+            {
+                LastName = "Ionescu",
+                FirstName = "Maria",
+                County = "Brașov",
+                City = "Fagaras",
+                BirthDate = new DateTime(1995, 05, 20),
+                Email = "loc.test2@test.com",
+                PhoneNumber = 744111222,
+                Password = "StrongPass123!",
+                ConfirmPassword = "StrongPass123!",
+                SelectedCategories = new List<string> { "Sport" },
+                ProfilePicture = "avatar.jpg"
+            }).Should().BeTrue();
+
+        [Fact]
+        [Trait("Feature", "Location")]
+        [Trait("Type", "HappyPath")]
+        [Trait("Priority", "P2")]
+        public void Register_ShouldSucceed_WhenCityHasHyphen()
+            => _registerService.Register(new RegisterRequest
+            {
+                LastName = "Ionescu",
+                FirstName = "Maria",
+                County = "Suceava",
+                City = "Vatra-Dornei",
+                BirthDate = new DateTime(1995, 05, 20),
+                Email = "loc.test6@test.com",
+                PhoneNumber = 744111222,
+                Password = "StrongPass123!",
+                ConfirmPassword = "StrongPass123!",
+                SelectedCategories = new List<string> { "Sport" },
+                ProfilePicture = "avatar.jpg"
+            }).Should().BeTrue();
+
+        [Fact]
+        [Trait("Feature", "Location")]
+        [Trait("Type", "Negative")]
+        [Trait("Priority", "P3")]
+        public void Register_ShouldFail_WhenCountyNameIsTooShort()
+            => _registerService.Register(new RegisterRequest
+            {
+                LastName = "Ionescu",
+                FirstName = "Maria",
+                County = "A",
+                City = "Oraș",
+                BirthDate = new DateTime(1995, 05, 20),
+                Email = "loc.test7@test.com",
+                PhoneNumber = 744111222,
+                Password = "StrongPass123!",
+                ConfirmPassword = "StrongPass123!",
+                SelectedCategories = new List<string> { "Sport" },
+                ProfilePicture = "avatar.jpg"
+            }).Should().BeFalse();
+
+        [Fact]
+        [Trait("Feature", "Location")]
+        [Trait("Type", "Negative")]
+        [Trait("Priority", "P3")]
+        public void Register_ShouldFail_WhenCityNameIsTooLong()
+            => _registerService.Register(new RegisterRequest
+            {
+                LastName = "Ionescu",
+                FirstName = "Maria",
+                County = "Dolj",
+                City = new string('A', 200),
+                BirthDate = new DateTime(1995, 05, 20),
+                Email = "loc.test8@test.com",
+                PhoneNumber = 744111222,
+                Password = "StrongPass123!",
+                ConfirmPassword = "StrongPass123!",
+                SelectedCategories = new List<string> { "Sport" },
+                ProfilePicture = "avatar.jpg"
+            }).Should().BeFalse();
+
+        [Fact]
+        [Trait("Feature", "Location")]
+        [Trait("Type", "Negative")]
+        [Trait("Priority", "P2")]
+        public void Register_ShouldFail_WhenCountyContainsNumbers()
+            => _registerService.Register(new RegisterRequest
+            {
+                LastName = "Ionescu",
+                FirstName = "Maria",
+                County = "Cluj123",
+                City = "Cluj",
+                BirthDate = new DateTime(1995, 05, 20),
+                Email = "loc.test9@test.com",
+                PhoneNumber = 744111222,
+                Password = "StrongPass123!",
+                ConfirmPassword = "StrongPass123!",
+                SelectedCategories = new List<string> { "Sport" },
+                ProfilePicture = "avatar.jpg"
+            }).Should().BeFalse();
+
+        [Fact]
+        [Trait("Feature", "Location")]
+        [Trait("Type", "HappyPath")]
+        [Trait("Priority", "P3")]
+        public void Register_ShouldSucceed_WhenCityHasMultipleSpaces()
+            => _registerService.Register(new RegisterRequest
+            {
+                LastName = "Ionescu",
+                FirstName = "Maria",
+                County = "Satu Mare",
+                City = "Baia Sprie",
+                BirthDate = new DateTime(1995, 05, 20),
+                Email = "loc.test10@test.com",
+                PhoneNumber = 744111222,
+                Password = "StrongPass123!",
+                ConfirmPassword = "StrongPass123!",
+                SelectedCategories = new List<string> { "Sport" },
+                ProfilePicture = "avatar.jpg"
+            }).Should().BeTrue();
+
+        [Fact]
+        [Trait("Feature", "Location")]
+        [Trait("Type", "Negative")]
+        [Trait("Priority", "P2")]
+        public void Register_ShouldFail_WhenCityContainsSpecialCharacters()
+            => _registerService.Register(new RegisterRequest
+            {
+                LastName = "Ionescu",
+                FirstName = "Maria",
+                County = "Bihor",
+                City = "Oradea!",
+                BirthDate = new DateTime(1995, 05, 20),
+                Email = "loc.test11@test.com",
+                PhoneNumber = 744111222,
+                Password = "StrongPass123!",
+                ConfirmPassword = "StrongPass123!",
+                SelectedCategories = new List<string> { "Sport" },
+                ProfilePicture = "avatar.jpg"
+            }).Should().BeFalse();
+
+        [Fact]
+        [Trait("Feature", "Location")]
+        [Trait("Type", "Security")]
+        [Trait("Priority", "P1")]
+        public void Register_ShouldFail_WhenCountyContainsSqlInjection()
+            => _registerService.Register(new RegisterRequest
+            {
+                LastName = "Ionescu",
+                FirstName = "Maria",
+                County = "Cluj'; DROP TABLE Users;--",
+                City = "Cluj",
+                BirthDate = new DateTime(1995, 05, 20),
+                Email = "loc.test12@test.com",
+                PhoneNumber = 744111222,
+                Password = "StrongPass123!",
+                ConfirmPassword = "StrongPass123!",
+                SelectedCategories = new List<string> { "Sport" },
+                ProfilePicture = "avatar.jpg"
+            }).Should().BeFalse();
+
+        [Fact]
+        [Trait("Feature", "Location")]
+        [Trait("Type", "HappyPath")]
+        [Trait("Priority", "P2")]
+        public void Register_ShouldBeCaseInsensitive_ForCountyAndCity()
+            => _registerService.Register(new RegisterRequest
+            {
+                LastName = "Ionescu",
+                FirstName = "Maria",
+                County = "cluj",
+                City = "CLUJ-NAPOCA",
+                BirthDate = new DateTime(1995, 05, 20),
+                Email = "loc.test13@test.com",
+                PhoneNumber = 744111222,
+                Password = "StrongPass123!",
+                ConfirmPassword = "StrongPass123!",
+                SelectedCategories = new List<string> { "Sport" },
+                ProfilePicture = "avatar.jpg"
+            }).Should().BeTrue();
+
+        [Fact]
+        [Trait("Feature", "Location")]
+        [Trait("Type", "Negative")]
+        [Trait("Priority", "P2")]
+        public void Register_ShouldFail_WhenCityDoesNotBelongToCounty()
+            => _registerService.Register(new RegisterRequest
+            {
+                LastName = "Ionescu",
+                FirstName = "Maria",
+                County = "Arad",
+                City = "Constanța",
+                BirthDate = new DateTime(1995, 05, 20),
+                Email = "loc.test14@test.com",
+                PhoneNumber = 744111222,
+                Password = "StrongPass123!",
+                ConfirmPassword = "StrongPass123!",
+                SelectedCategories = new List<string> { "Sport" },
+                ProfilePicture = "avatar.jpg"
+            }).Should().BeFalse();
+
+        [Fact]
+        [Trait("Feature", "Location")]
+        [Trait("Type", "Negative")]
+        [Trait("Priority", "P2")]
+        public void Register_ShouldFail_WhenCountyNameIsOnlyNumbers()
+            => _registerService.Register(new RegisterRequest
+            {
+                LastName = "Ionescu",
+                FirstName = "Maria",
+                County = "12345",
+                City = "Slatina",
+                BirthDate = new DateTime(1995, 05, 20),
+                Email = "loc.test16@test.com",
+                PhoneNumber = 744111222,
+                Password = "StrongPass123!",
+                ConfirmPassword = "StrongPass123!",
+                SelectedCategories = new List<string> { "Sport" },
+                ProfilePicture = "avatar.jpg"
+            }).Should().BeFalse();
+
+
+        [Fact]
+        [Trait("Feature", "Location")]
+        [Trait("Type", "Negative")]
+        [Trait("Priority", "P2")]
+        public void Register_ShouldFail_WhenCityNameIsOnlyNumbers()
+           => _registerService.Register(new RegisterRequest
+           {
+               LastName = "Ionescu",
+               FirstName = "Maria",
+               County = "Arad",
+               City = "12345",
+               BirthDate = new DateTime(1995, 05, 20),
+               Email = "loc.test16@test.com",
+               PhoneNumber = 744111222,
+               Password = "StrongPass123!",
+               ConfirmPassword = "StrongPass123!",
+               SelectedCategories = new List<string> { "Sport" },
+               ProfilePicture = "avatar.jpg"
+           }).Should().BeFalse();
+
+        [Fact]
+        [Trait("Feature", "Location")]
+        [Trait("Type", "Security")]
+        [Trait("Priority", "P1")]
+        public void Register_ShouldFail_WhenCityContainsHtmlTags()
+            => _registerService.Register(new RegisterRequest
+            {
+                LastName = "Ionescu",
+                FirstName = "Maria",
+                County = "Galați",
+                City = "<b>Galați</b>",
+                BirthDate = new DateTime(1995, 05, 20),
+                Email = "loc.test18@test.com",
+                PhoneNumber = 744111222,
+                Password = "StrongPass123!",
+                ConfirmPassword = "StrongPass123!",
+                SelectedCategories = new List<string> { "Sport" },
+                ProfilePicture = "avatar.jpg"
+            }).Should().BeFalse();
+
+        [Fact]
+        [Trait("Feature", "Location")]
+        [Trait("Type", "HappyPath")]
+        [Trait("Priority", "P3")]
+        public void Register_ShouldSucceed_WhenCityNameIsShort()
+            => _registerService.Register(new RegisterRequest
+            {
+                LastName = "Ionescu",
+                FirstName = "Maria",
+                County = "Mureș",
+                City = "Reghin",
+                BirthDate = new DateTime(1995, 05, 20),
+                Email = "loc.test19@test.com",
+                PhoneNumber = 744111222,
+                Password = "StrongPass123!",
+                ConfirmPassword = "StrongPass123!",
+                SelectedCategories = new List<string> { "Sport" },
+                ProfilePicture = "avatar.jpg"
+            }).Should().BeTrue();
+
+        [Fact]
+        [Trait("Feature", "Location")]
+        [Trait("Type", "Negative")]
+        [Trait("Priority", "P2")]
+        public void Register_ShouldFail_WhenCountyIsInvalidButCityIsCorrect()
+            => _registerService.Register(new RegisterRequest
+            {
+                LastName = "Ionescu",
+                FirstName = "Maria",
+                County = "Narnia",
+                City = "Buzău",
+                BirthDate = new DateTime(1995, 05, 20),
+                Email = "loc.test20@test.com",
+                PhoneNumber = 744111222,
+                Password = "StrongPass123!",
+                ConfirmPassword = "StrongPass123!",
+                SelectedCategories = new List<string> { "Sport" },
+                ProfilePicture = "avatar.jpg"
+            }).Should().BeFalse();
+
+        [Fact]
+        [Trait("Feature", "Location")]
+        [Trait("Type", "HappyPath")]
+        [Trait("Priority", "P2")]
+        public void Register_ShouldSucceed_WhenCityHasParentheses()
+            => _registerService.Register(new RegisterRequest
+            {
+                LastName = "Ionescu",
+                FirstName = "Maria",
+                County = "Ilfov",
+                City = "Popești-Leordeni (Sud)",
+                BirthDate = new DateTime(1995, 05, 20),
+                Email = "loc.test21@test.com",
+                PhoneNumber = 744111222,
+                Password = "StrongPass123!",
+                ConfirmPassword = "StrongPass123!",
+                SelectedCategories = new List<string> { "Sport" },
+                ProfilePicture = "avatar.jpg"
+            }).Should().BeTrue();
+
+        [Fact]
+        [Trait("Feature", "Location")]
+        [Trait("Type", "Negative")]
+        [Trait("Priority", "P3")]
+        public void Register_ShouldFail_WhenCityIsJustEmoji()
+            => _registerService.Register(new RegisterRequest
+            {
+                LastName = "Ionescu",
+                FirstName = "Maria",
+                County = "Vâlcea",
+                City = "🏙️",
+                BirthDate = new DateTime(1995, 05, 20),
+                Email = "loc.test22@test.com",
+                PhoneNumber = 744111222,
+                Password = "StrongPass123!",
+                ConfirmPassword = "StrongPass123!",
+                SelectedCategories = new List<string> { "Sport" },
+                ProfilePicture = "avatar.jpg"
+            }).Should().BeFalse();
+
+        [Fact]
+        [Trait("Feature", "Location")]
+        [Trait("Type", "HappyPath")]
+        [Trait("Priority", "P2")]
+        public void Register_ShouldSucceed_WhenCountyIsBucharest()
+            => _registerService.Register(new RegisterRequest
+            {
+                LastName = "Ionescu",
+                FirstName = "Maria",
+                County = "București",
+                City = "Sector 3",
+                BirthDate = new DateTime(1995, 05, 20),
+                Email = "loc.test23@test.com",
+                PhoneNumber = 744111222,
+                Password = "StrongPass123!",
+                ConfirmPassword = "StrongPass123!",
+                SelectedCategories = new List<string> { "Sport" },
+                ProfilePicture = "avatar.jpg"
+            }).Should().BeTrue();
+
+        [Fact]
+        [Trait("Feature", "Location")]
+        [Trait("Type", "Negative")]
+        [Trait("Priority", "P2")]
+        public void Register_ShouldFail_WhenCountyAndCityAreSwapped()
+            => _registerService.Register(new RegisterRequest
+            {
+                LastName = "Ionescu",
+                FirstName = "Maria",
+                County = "Ploiești",
+                City = "Prahova",
+                BirthDate = new DateTime(1995, 05, 20),
+                Email = "loc.test24@test.com",
+                PhoneNumber = 744111222,
+                Password = "StrongPass123!",
+                ConfirmPassword = "StrongPass123!",
+                SelectedCategories = new List<string> { "Sport" },
+                ProfilePicture = "avatar.jpg"
+            }).Should().BeFalse();
+
+        [Fact]
+        [Trait("Feature", "Location")]
+        [Trait("Type", "HappyPath")]
+        [Trait("Priority", "P3")]
+        public void Register_ShouldSucceed_WhenCityNameIsVeryLongButValid()
+            => _registerService.Register(new RegisterRequest
+            {
+                LastName = "Ionescu",
+                FirstName = "Maria",
+                County = "Constanța",
+                City = "Mangalia Sat (Zona Industrială)",
+                BirthDate = new DateTime(1995, 05, 20),
+                Email = "loc.test25@test.com",
+                PhoneNumber = 744111222,
+                Password = "StrongPass123!",
+                ConfirmPassword = "StrongPass123!",
+                SelectedCategories = new List<string> { "Sport" },
+                ProfilePicture = "avatar.jpg"
             }).Should().BeTrue();
 
 

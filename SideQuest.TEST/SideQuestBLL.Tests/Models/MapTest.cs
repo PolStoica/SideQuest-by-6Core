@@ -315,6 +315,9 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Models
 
             isOverlapping.Should().BeTrue("because both events share the exact same GPS coordinates and will overlap on the map");
         }
+
+
+
     }
 }
 

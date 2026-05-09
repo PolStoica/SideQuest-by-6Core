@@ -18,11 +18,29 @@ namespace SideQuest.BLL.Models
         public double Long { get; set; }
         public bool? IsMajor { get; set; }
  
-        public void SetName(string name) { }
-        public void SetInterests(List<Interest> interests) { }
-        public void SetProfilePicture(string picture) { }
-        public void SetEmail(string email) { }
-        public void SetPassword(string password) { }
-        public void SetLocation() { } // complex - API
+        public void SetName(string name)
+        {
+            Name= name;
+        }
+        public void SetInterests(List<Interest> interests)
+        {
+            Interests=interests;
+        }
+        public void SetProfilePicture(string picture)
+        {
+            ProfilePicture=picture;
+        }
+        public void SetEmail(string email) 
+        {
+            Email=email;
+        }
+        public void SetPassword(string password) 
+        {
+            Password=password;
+        }
+        public void SetLocation() 
+        {
+
+        } // complex - API
     }
 }

@@ -29,22 +29,36 @@ public class Event
 
     public void SetPin(Map map)
     {
+        if (!map.Events.Any(e => e.Title == this.Title && e.Date == this.Date))
+            map.Events.Add(this);
     }
 
     public void CreateForm(Form form)
     {
+        form = new Form();
     }
 
     public void ApproveRequest(User user)
     {
+        if (AvailableSpots == 0)
+            throw new InvalidOperationException("Nu mai poti adauga participanti noi");
+        Participants.Add(user);
+        AvailableSpots--;
+        Requests.Remove(user);
     }
 
     public void DenyRequest(User user)
     {
+        Requests.Remove(user);
     }
 
     public void LeaveReview(Review review)
     {
+        if (!Participants.Any(p => p.Email == review.Description))
+            Grade = review.Grade;
+        Grade = review.Grade;
+        EventReview = review.Description;
+        Organizer.Reviews.Add(review);
     }
 
     public void SetRecurrence()

@@ -9,6 +9,7 @@ public class Chat
 
     public void OpenChat()
     {
+
     }
 
     public void BlockUser(User user)

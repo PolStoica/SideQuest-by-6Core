@@ -22,23 +22,23 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
         [Trait("Type", "FunctionalTest")]
         [Trait("Priority", "P0")]
         public void Register_ShouldSucceed_WhenDataIsValid()
-    => _registerService
-        .Register(new RegisterRequest
-        {
-            LastName = "Popescu",
-            FirstName = "Andrei",
-            County = "Cluj",
-            City = "Cluj-Napoca",
-            BirthDate = new DateTime(2005, 5, 20),
-            ProfilePicture = "base64_string_sau_url_aici",
-            Email = "alex.test@example.com",
-            PhoneNumber = 722123456,
-            Password = "Abc123456_123!",
-            ConfirmPassword = "Abc123456_123!",
-            SelectedCategories = new List<string> { "Muzică", "Sport", "Gaming" }
+            => _registerService
+                .Register(new RegisterRequest
+                {
+                    LastName = "Popescu",
+                    FirstName = "Andrei",
+                    County = "Cluj",
+                    City = "Cluj-Napoca",
+                    BirthDate = new DateTime(2005, 5, 20),
+                    ProfilePicture = "base64_string_sau_url_aici",
+                    Email = "alex.test@example.com",
+                    PhoneNumber = 722123456,
+                    Password = "Abc123456_123!",
+                    ConfirmPassword = "Abc123456_123!",
+                    SelectedCategories = new List<string> { "Muzică", "Sport", "Gaming" }
 
-        })
-        .Should().BeTrue();
+                })
+                .Should().BeTrue();
 
 
         [Theory]
@@ -574,11 +574,11 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
         [Trait("Feature", "EmailValidation")]
         [Trait("Type", "NegativeTest")]
         [Trait("Priority", "P2")]
-        public void Register_ShouldFail_WhenEmailContainsUnusualSymbols(string unusualEmail)
+        public void Register_ShouldFail_WhenEmailContainsUnusualSymbols(string email)
                 => _registerService
                     .Register(new RegisterRequest
                     {
-                        Email = unusualEmail,
+                        Email = email,
                         LastName = "Popescu",
                         FirstName = "Andrei",
                         County = "Cluj",
@@ -645,11 +645,11 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
         [Trait("Feature", "EmailValidation")]
         [Trait("Type", "NegativeTest")]
         [Trait("Priority", "P2")]
-        public void Register_ShouldFail_WhenEmailStartsWithSpecialCharacter(string invalidEmail)
+        public void Register_ShouldFail_WhenEmailStartsWithSpecialCharacter(string email)
             => _registerService
                 .Register(new RegisterRequest
                 {
-                    Email = invalidEmail,
+                    Email = email,
                     LastName = "Popescu",
                     FirstName = "Andrei",
                     County = "Cluj",

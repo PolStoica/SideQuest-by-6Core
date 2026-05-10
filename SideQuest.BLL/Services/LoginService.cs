@@ -9,28 +9,33 @@ namespace SideQuest.BLL.Services
     {
         private static readonly List<User> _users = new();
         private readonly Dictionary<string, LoginState> _loginStates = new();
-        private readonly ITimeProvider _time; 
+        private readonly ITimeProvider _time;
 
         private const int MaxFailedAttempts = 3;
         private static readonly TimeSpan LockDuration = TimeSpan.FromDays(1);
 
-        public LoginService(ITimeProvider time)
-        {
-            _time = time;
-        }
+        public LoginService(ITimeProvider time) => _time = time;
 
-        public void AddUserForTesting(RegisterRequest request)
+        public LoginService AddUserForTesting(RegisterRequest request)
         {
             if (!_users.Any(u => u.Email == request.Email))
             {
                 _users.Add(new User
                 {
-                    Email = request.Email,
+                    Email = request.Email.ToLower().Trim(),
                     Password = request.Password,
-                    Name = request.FullName,
-                    Username = request.Email.Split('@')[0]
+                    FirstName = request.FirstName,
+                    LastName = request.LastName,
+                    County = request.County,
+                    City = request.City,
+                    BirthDate = request.BirthDate,
+                    PhoneNumber = request.PhoneNumber,
+                    ProfilePicture = request.ProfilePicture,
+                    SelectedCategories = request.SelectedCategories,
+                    Username = GenerateProfessionalUsername(request.FirstName, request.LastName)
                 });
             }
+            return this;
         }
 
         public bool Login(string email, string password)
@@ -66,9 +71,7 @@ namespace SideQuest.BLL.Services
 
             state.FailedAttempts++;
             if (state.FailedAttempts >= MaxFailedAttempts)
-            {
                 state.LockTime = _time.UtcNow;
-            }
 
             return false;
         }

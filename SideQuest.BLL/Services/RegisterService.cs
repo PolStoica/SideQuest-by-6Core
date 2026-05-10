@@ -49,6 +49,7 @@ namespace SideQuest.BLL.Services
                 City = request.City,
                 PhoneNumber = request.PhoneNumber,
                 BirthDate = request.BirthDate,
+
                 Username = request.Email.Split('@')[0]
             });
 

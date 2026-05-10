@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace SideQuest.BLL.Services
 {
@@ -8,45 +6,18 @@ namespace SideQuest.BLL.Services
     {
         public static IEnumerable<object[]> InvalidLoginData()
         {
-            var invalidInputs = new[]
-            {
-                null,
-                "",
-                " "
-            };
-
-            foreach (var email in invalidInputs)
-                foreach (var password in invalidInputs)
-
-                {
-                    yield return new object[] { email, password };
-                }
+            yield return new object[] { null, "Abc123456!" };
+            yield return new object[] { "test@test.com", null };
+            yield return new object[] { "", "" };
+            yield return new object[] { " ", " " };
         }
 
         public static IEnumerable<object[]> EmailAndPasswordContainsLeadingOrTrailingSpaces()
         {
-            var emailInvalidInputs = new[]
-            {
-                " test@test.com",
-                "test@test.com ",
-                " test@test.com "
-            };
-
-            var passwordInvalidInputs = new[]
-            {
-                " Abc123456!",
-                "Abc123456! ",
-                " Abc123456! "
-            };
-
-            foreach (var email in emailInvalidInputs)
-                foreach (var password in passwordInvalidInputs)
-
-                {
-                    yield return new object[] { email, password };
-                }
+            yield return new object[] { " test@test.com", "Abc123456!" };
+            yield return new object[] { "test@test.com ", "Abc123456!" };
+            yield return new object[] { "test@test.com", " Abc123456!" };
+            yield return new object[] { "test@test.com", "Abc123456! " };
         }
-
-
     }
 }

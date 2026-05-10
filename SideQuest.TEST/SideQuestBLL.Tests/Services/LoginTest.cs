@@ -559,6 +559,226 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
         }
 
 
+
+        // EDGE CASES
+
+
+        [Fact]
+        [Trait("Feature", "Login")]
+        [Trait("Type", "Negative")]
+        [Trait("Priority", "P2")]
+        public void Login_ShouldFail_WhenPasswordIsOnlyOneCharacter()
+            => _loginService
+                .AddUserForTesting(CreateRequest("short@test.com", "P"))
+                .Login("short@test.com", "P")
+                .Should().BeFalse();
+
+
+        [Fact]
+        [Trait("Feature", "Login")]
+        [Trait("Type", "HappyPath")]
+        [Trait("Priority", "P2")]
+        public void Login_ShouldWork_WhenEmailContainsRomanianDiacritics()
+        => _loginService
+            .AddUserForTesting(CreateRequest("stefan.învârtit@test.ro", "Complex123!"))
+            .Login("stefan.învârtit@test.ro", "Complex123!")
+            .Should().BeTrue();
+
+        [Fact]
+        [Trait("Feature", "Login")]
+        [Trait("Type", "Security")]
+        [Trait("Priority", "P1")]
+        public void Login_ShouldFail_WhenAccountIsSoftDeleted()
+        {
+            var email = "deleted@test.com";
+            var pass = "Complex123!";
+
+            _loginService.AddUserForTesting(CreateRequest(email, pass));
+
+            _loginService.Login(email, pass).Should().BeTrue("pentru că userul este încă activ");
+
+            var user = LoginService.GetUsersForTesting().First(u => u.Email == email);
+            user.IsDeleted = true; 
+
+            _loginService.Login(email, pass)
+                .Should().BeFalse("pentru că un cont marcat ca 'șters' nu are voie să acceseze sistemul");
+        }
+
+
+        [Fact]
+        [Trait("Feature", "Login")]
+        [Trait("Type", "HappyPath")]
+        [Trait("Priority", "P2")]
+        public void Login_ShouldSucceed_WhenEmailHasNumbers()
+            => _loginService
+                .AddUserForTesting(CreateRequest("agent007@m16.gov", "Complex123!"))
+                .Login("agent007@m16.gov", "Complex123!")
+                .Should().BeTrue();
+
+        [Fact]
+        [Trait("Feature", "Login")]
+        [Trait("Type", "HappyPath")]
+        [Trait("Priority", "P2")]
+        public void Login_ShouldFail_WhenPasswordIsOnlySpecialCharactersAndNumbers()
+        {
+            _loginService
+                .AddUserForTesting(CreateRequest("special@test.com", "!!!111AAA"))
+                .Login("special@test.com", "!!!111AAA")
+                .Should().BeFalse();
+        }
+
+        [Fact]
+        [Trait("Feature", "Login")]
+        [Trait("Type", "Security")]
+        [Trait("Priority", "P2")]
+        public void Login_ShouldSyncState_BetweenMultipleServiceInstances()
+        {
+            var serviceA = new LoginService(_time);
+            var serviceB = new LoginService(_time);
+
+            serviceA.AddUserForTesting(CreateRequest("shared@test.com", "Complex123!"));
+
+            serviceB.Login("shared@test.com", "Complex123!")
+                .Should().BeTrue();
+
+        }
+
+        [Fact]
+        [Trait("Feature", "Login")]
+        [Trait("Type", "HappyPath")]
+        [Trait("Priority", "P2")]
+        public void Register_ShouldAllowReRegistration_AfterAccountIsDeleted()
+        {
+            var email = "reborn@test.com";
+            _loginService.AddUserForTesting(CreateRequest(email, "Complex123!"));
+
+            LoginService.GetUsersForTesting().RemoveAll(u => u.Email == email);
+
+            _loginService.AddUserForTesting(CreateRequest(email, "NewPass123!"))
+                .Login(email, "NewPass123!")
+                .Should().BeTrue();
+        }
+
+
+            // REFINEMENT TESTS & EDGE CASES
+
+            [Fact]
+            [Trait("Feature", "Security")]
+            [Trait("Type", "TimingAttack")]
+            [Trait("Priority", "P3")]
+            public void Login_ShouldTakeSimilarTime_ForExistingAndNonExistingUsers()
+            {
+                var stopwatch = new System.Diagnostics.Stopwatch();
+
+                _loginService.AddUserForTesting(CreateRequest("exists@test.com", "Complex123!"));
+
+                stopwatch.Start();
+                _loginService.Login("exists@test.com", "wrong_pass");
+                var time1 = stopwatch.ElapsedMilliseconds;
+
+                stopwatch.Restart();
+                _loginService.Login("nonexistent@test.com", "any_pass");
+                var time2 = stopwatch.ElapsedMilliseconds;
+
+                Math.Abs(time1 - time2).Should().BeLessThan(500, "pentru a preveni detectarea conturilor prin timing attacks");
+            }
+
+            [Fact]
+            [Trait("Feature", "Security")]
+            [Trait("Type", "Concurrency")]
+            [Trait("Priority", "P2")]
+            public void Login_ShouldHandleConcurrentRequests_WithoutCounterBypass()
+            {
+                var email = "race@test.com";
+                _loginService.AddUserForTesting(CreateRequest(email, "Complex123!"));
+
+                Parallel.For(0, 10, i => {
+                    _loginService.Login(email, "wrong_pass");
+                });
+
+                _loginService.Login(email, "Complex123!")
+                     .Should().BeFalse("pentru că lock-ul trebuie să fie thread-safe");
+            }
+
+            [Fact]
+            [Trait("Feature", "Security")]
+            [Trait("Type", "Session")]
+            [Trait("Priority", "P1")]
+            public void Login_ShouldFail_ImmediatelyAfterPasswordIsChangedInBackend()
+            {
+                var email = "change@test.com";
+                var oldPass = "OldPass123!";
+                _loginService.AddUserForTesting(CreateRequest(email, oldPass));
+
+                _loginService.Login(email, oldPass)
+                    .Should().BeTrue();
+
+                var user = LoginService.GetUsersForTesting().First(u => u.Email == email);
+                user.Password = "NewPass123!";
+
+                _loginService.Login(email, oldPass)
+                    .Should().BeFalse("pentru că vechea parolă trebuie să devină invalidă instant");
+            }
+
+            [Fact]
+            [Trait("Feature", "Validation")]
+            [Trait("Type", "Sanitization")]
+            [Trait("Priority", "P3")]
+            public void Login_ShouldSanitize_HiddenUnicodeCharacters()
+            {
+                
+                var cleanEmail = "clean@test.com";
+                var dirtyEmail = "clean@test.com\u200B"; //"Zero Width Space" (invisible at the end)
+
+                _loginService.AddUserForTesting(CreateRequest(cleanEmail, "Complex123!"))
+                    .Login(dirtyEmail, "Complex123!")
+                    .Should().BeTrue("deoarece sistemul ar trebui să curețe caracterele invizibile");
+            }
+
+            [Fact]
+            [Trait("Feature", "Validation")]
+            [Trait("Type", "HappyPath")]
+            [Trait("Priority", "P3")]
+            public void Login_ShouldBeCaseInsensitive_ForEmailDomainOnly()
+            {
+                _loginService.AddUserForTesting(CreateRequest("user@gmail.com", "Complex123!"));
+
+                _loginService.Login("user@GMAIL.COM", "Complex123!")
+                    .Should().BeTrue();
+            }
+
+            [Fact]
+            [Trait("Feature", "Security")]
+            [Trait("Type", "Injection")]
+            [Trait("Priority", "P1")]
+            public void Login_ShouldBeSafe_AgainstBlindSqlInjection()
+            {
+                var blindSql = "admin' AND (SELECT 1 FROM (SELECT(SLEEP(5)))a)--";
+
+                _loginService.Login(blindSql, "anyPass123_")
+                    .Should().BeFalse();
+            }
+
+            [Fact]
+            [Trait("Feature", "Stability")]
+            [Trait("Type", "Persistence")]
+            [Trait("Priority", "P2")]
+            public void Lockout_ShouldPersist_BetweenServiceInstances()
+            {
+                var email = "persist@test.com";
+                var service1 = new LoginService(_time);
+                service1.AddUserForTesting(CreateRequest(email, "Complex123!"));
+
+                for (int i = 0; i < 5; i++) service1.Login(email, "wrong");
+
+                var service2 = new LoginService(_time);
+
+                service2.Login(email, "Complex123!")
+                    .Should().BeFalse();
+            }
+
+        
+
     }
 
 

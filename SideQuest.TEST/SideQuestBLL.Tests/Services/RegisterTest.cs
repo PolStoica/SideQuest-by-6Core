@@ -257,11 +257,11 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
         [Trait("Feature", "EmailValidation")]
         [Trait("Type", "FunctionalTest")]
         [Trait("Priority", "P2")]
-        public void Register_ShouldSucceed_WhenEmailContainsValidSpecialCharacters(string validEmail)
+        public void Register_ShouldSucceed_WhenEmailContainsValidSpecialCharacters(string email)
             => _registerService
                 .Register(new RegisterRequest
                 {
-                    Email = validEmail,
+                    Email = email,
                     LastName = "Popescu",
                     FirstName = "Andrei",
                     County = "Cluj",
@@ -283,11 +283,11 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
         [Trait("Feature", "EmailValidation")]
         [Trait("Type", "NegativeTest")]
         [Trait("Priority", "P2")]
-        public void Register_ShouldFail_WhenEmailContainsInternalSpaces(string emailWithSpaces)
+        public void Register_ShouldFail_WhenEmailContainsInternalSpaces(string email)
             => _registerService
                 .Register(new RegisterRequest
                 {
-                    Email = emailWithSpaces,
+                    Email = email,
                     LastName = "Popescu",
                     FirstName = "Andrei",
                     County = "Cluj",
@@ -309,11 +309,11 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
         [Trait("Feature", "EmailValidation")]
         [Trait("Type", "NegativeTest")]
         [Trait("Priority", "P3")]
-        public void Register_ShouldFail_WhenEmailHasInvalidDotStructure(string invalidEmail)
+        public void Register_ShouldFail_WhenEmailHasInvalidDotStructure(string email)
             => _registerService
                 .Register(new RegisterRequest
                 {
-                    Email = invalidEmail,
+                    Email = email,
                     LastName = "Popescu",
                     FirstName = "Andrei",
                     County = "Cluj",

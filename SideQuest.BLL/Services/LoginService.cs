@@ -32,7 +32,6 @@ namespace SideQuest.BLL.Services
                     PhoneNumber = request.PhoneNumber,
                     ProfilePicture = request.ProfilePicture,
                     SelectedCategories = request.SelectedCategories,
-                    Username = GenerateProfessionalUsername(request.FirstName, request.LastName)
                 });
             }
             return this;
@@ -80,6 +79,7 @@ namespace SideQuest.BLL.Services
     public class LoginState
     {
         public int FailedAttempts { get; set; }
+        public int TotalBlocksCount { get; set; } 
         public DateTime? LockTime { get; set; }
     }
 }

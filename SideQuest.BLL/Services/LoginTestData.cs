@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using SideQuest.BLL.Models;
+using System.Collections.Generic;
 
 namespace SideQuest.BLL.Services
 {
@@ -18,6 +19,8 @@ namespace SideQuest.BLL.Services
             yield return new object[] { "test@test.com ", "Abc123456!" };
             yield return new object[] { "test@test.com", " Abc123456!" };
             yield return new object[] { "test@test.com", "Abc123456! " };
+
         }
+
     }
 }

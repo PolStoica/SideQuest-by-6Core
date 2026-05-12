@@ -48,8 +48,8 @@ namespace SideQuest.BLL.Services
                 County = request.County,
                 City = request.City,
                 PhoneNumber = request.PhoneNumber,
+                ProfilePicture = request.ProfilePicture,
                 BirthDate = request.BirthDate,
-                Username = request.Email.Split('@')[0]
             });
 
             return true;

@@ -1,10 +1,16 @@
 using SideQuest.BLL.Enums;
+using SideQuest.BLL.Services;
 
 namespace SideQuest.BLL.Models
 {
     public class User
     {
-        public string Name { get; set; }
+        public string LastName { get; set; }
+        public string FirstName { get; set; }
+        public string County { get; set; }
+        public string City { get; set; }
+        public long PhoneNumber { get; set; }
+        public DateTime DateOfBirth { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
         public string Username { get; set; }

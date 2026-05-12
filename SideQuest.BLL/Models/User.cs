@@ -1,10 +1,16 @@
 using SideQuest.BLL.Enums;
+using SideQuest.BLL.Services;
 
 namespace SideQuest.BLL.Models
 {
     public class User
     {
-        public string Name { get; set; }
+        public string LastName { get; set; }
+        public string FirstName { get; set; }
+        public string County { get; set; }
+        public string City { get; set; }
+        public long PhoneNumber { get; set; }
+        public DateTime DateOfBirth { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
         public string Username { get; set; }
@@ -20,11 +26,23 @@ namespace SideQuest.BLL.Models
         public double Long { get; set; }
         public bool? IsMajor { get; set; }
  
-        public void SetName(string name) { }
-        public void SetInterests(List<Interest> interests) { }
-        public void SetProfilePicture(string picture) { }
-        public void SetEmail(string email) { }
-        public void SetPassword(string password) { }
+        public void SetName(string name) {
+             Name = name;
+        }
+        public void SetInterests(List<Interest> interests) {
+            Interests = interests;
+        }
+        public void SetProfilePicture(string picture) {
+            ProfilePicture = picture;
+        }
+        public void SetEmail(string email)
+        {
+            Email = email;
+        }
+        public void SetPassword(string password) 
+        {
+            Password = password;
+        }
         public void SetLocation() { } // complex - API
     }
 }

@@ -37,6 +37,30 @@ namespace SideQuest.BLL.Services
             return this;
         }
 
+
+        public static List<User> GetUsersForTesting()
+        {
+            return new List<User>
+            {
+                new User
+                {
+                    FirstName = "Alex",
+                    LastName = "Bonatiu",
+                    Email = "test@example.com",
+                    City = "Cluj-Napoca",
+                    County = "Cluj"
+                },
+                new User
+                {
+                    FirstName = "Andrei",
+                    LastName = "Mureșan",
+                    Email = "cluj.fan@map.ro",
+                    City = "Cluj-Napoca",
+                    County = "Cluj"
+                }
+            };
+        }
+
         public bool Login(string email, string password)
         {
             if (string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(password))

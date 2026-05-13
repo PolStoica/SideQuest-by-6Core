@@ -1,13 +1,36 @@
 ﻿
 using FluentAssertions;
+using Microsoft.Extensions.Logging;
 using SideQuest.BLL.Enums;
 using SideQuest.BLL.Models;
 using SideQuest.BLL.Services;
+using System.Net.NetworkInformation;
+using System.Runtime.CompilerServices;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace SideQuest_Test.SideQuestBLL.Tests.Models
 {
     public class MapTest
     {
+
+        private readonly MapService _mapService = new MapService();
+
+        private bool ValidateCoordinates(double lat, double lon)
+        {
+            if (lat < -90 || lat > 90) return false;
+            if (lon < -180 || lon > 180) return false;
+            if (lat == 0 && lon == 0) return false;
+
+            return true;
+        }
+
+        private bool ValidateIsClujArea(double lat, double lon)
+        {
+            bool isLatOk = lat >= 46.70 && lat <= 46.85;
+            bool isLonOk = lon >= 23.40 && lon <= 23.75;
+
+            return isLatOk && isLonOk;
+        }
 
 
         [Fact]
@@ -27,8 +50,8 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Models
 
             result.Should().HaveCount(2, "because there are only two events scheduled in Mănăștur");
 
-            result.Should().AllSatisfy(e =>
-                e.EventZone.Should().Be(targetZone, "because the filter must exclude events from other districts"));
+            result.Should().AllSatisfy(e => e.EventZone
+                .Should().Be(targetZone, "because the filter must exclude events from other districts"));
 
             result.Should().NotContain(event2, "because Centru is not Mănăștur");
         }
@@ -112,21 +135,10 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Models
         [Trait("Priority", "P1")]
         public void ValidateCoordinates_ShouldIdentifyPhysicalAndBusinessBounds(double lat, double lon, bool expected)
         {
-            // Act
             bool isValid = ValidateCoordinates(lat, lon);
 
-            // Assert
             isValid.Should().Be(expected,
                 $"because the coordinates ({lat}, {lon}) are {(expected ? "within" : "outside")} valid bounds");
-        }
-
-        private bool ValidateCoordinates(double lat, double lon)
-        {
-            if (lat < -90 || lat > 90) return false;
-            if (lon < -180 || lon > 180) return false;
-            if (lat == 0 && lon == 0) return false;
-
-            return true;
         }
 
 
@@ -144,21 +156,12 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Models
             isValid.Should().BeFalse($"because {lat} and {lon} should be outside the Cluj-Napoca bounding box");
         }
 
-        private bool ValidateIsClujArea(double lat, double lon)
-        {
-            bool isLatOk = lat >= 46.70 && lat <= 46.85;
-            bool isLonOk = lon >= 23.40 && lon <= 23.75;
-
-            return isLatOk && isLonOk;
-        }
-
 
         [Theory]
         [InlineData(46.76, 23.59)]
         [Trait("Feature", "MapGeofencing")]
         [Trait("Type", "LogicTest")]
         [Trait("Priority", "P1")]
-
         public void CreateEvent_OutsideCluj_ShouldBeValid(double lat, double lon)
         {
             bool isValid = ValidateIsClujArea(lat, lon);
@@ -317,7 +320,585 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Models
         }
 
 
+        // --- CATEGORY FILTERING ---
+
+
+        [Fact]
+        [Trait("Feature", "MapFiltering")]
+        [Trait("Type", "Functional")]
+        [Trait("Priority", "P1")]
+        public void Filter_ClickingSocial_ShouldOnlyShowSocialMarkersOnMap()
+            => _mapService
+                .WithEvents(SeedData.GetClujEvents())
+                .ApplyFilter(Category.Social)
+                .VisibleMarkers.Should().AllSatisfy(m => m.Category.Should().Be(Category.Social),
+                    "because the Social filter must exclude all other event types");
+
+        [Fact]
+        [Trait("Feature", "MapFiltering")]
+        [Trait("Type", "Functional")]
+        [Trait("Priority", "P1")]
+        public void Filter_ClickingAll_ShouldResetAndShowAllCategories()
+            => _mapService
+                .WithEvents(SeedData.GetClujEvents())
+                .ApplyFilter(Category.Social)
+                .ApplyFilter(Category.Other)
+                .VisibleMarkers.Should().HaveCount(SeedData.GetClujEvents().Count,
+                    "because clearing or changing filters should eventually allow seeing all events");
+
+        [Fact]
+        [Trait("Feature", "MapFiltering")]
+        [Trait("Type", "Logic")]
+        [Trait("Priority", "P2")]
+        public void Filter_MultipleSelection_ShouldShowUnionOfSelectedCategories()
+            => _mapService
+                .WithEvents(SeedData.GetClujEvents())
+                .ApplyFilters(new[] { Category.Sports, Category.Gaming })
+                .VisibleMarkers.Should().OnlyContain(m => m.Category == Category.Sports || m.Category == Category.Gaming);
+
+        [Fact]
+        [Trait("Feature", "MapFiltering")]
+        [Trait("Type", "Boundary")]
+        [Trait("Priority", "P2")]
+        public void Filter_EmptyCategory_ShouldShowNoMarkersButKeepMapFunctional()
+            => _mapService
+                .WithEvents(new List<Event>())
+                .ApplyFilter(Category.Educational)
+                .Execute(s => s.VisibleMarkers.Should().BeEmpty())
+                .IsMapResponsive.Should().BeTrue("because an empty result set should not freeze the UI");
+
+        [Theory]
+        [InlineData(320)]
+        [InlineData(414)]
+        [Trait("Feature", "MapUX")]
+        [Trait("Type", "Layout")]
+        public void Filter_ScrollCategories_ShouldWorkSmoothlyOnSmallScreens(int screenWidth)
+            => _mapService
+                .SetViewportWidth(screenWidth)
+                .GetCategoryBarState()
+                .IsScrollable.Should().BeTrue("because the category list must be scrollable on mobile screens");
+
+
+        [Fact]
+        [Trait("Feature", "MapFiltering")]
+        [Trait("Type", "UX_Toggle")]
+        public void Filter_ToggleOff_ShouldShowAllEventsAgain()
+           => _mapService
+               .WithEvents(SeedData.GetClujEvents())
+               .ApplyFilter(Category.Social)
+               .ApplyFilter(Category.Social)
+               .VisibleMarkers.Should().HaveCount(SeedData.GetClujEvents().Count,
+                   "because clicking an active filter twice should deselect it and show everything");
+
+        [Fact]
+        [Trait("Feature", "MapFiltering")]
+        [Trait("Type", "Functional")]
+        public void Filter_SwitchingDirectly_ShouldReplacePreviousFilter()
+            => _mapService
+                .WithEvents(SeedData.GetClujEvents())
+                .ApplyFilter(Category.Sports)
+                .ApplyFilter(Category.Gaming) 
+                .VisibleMarkers.Should().AllSatisfy(m => m.Category.Should().Be(Category.Gaming),
+                    "because the UI should replace the previous category with the new one, not stack them");
+
+        [Fact]
+        [Trait("Feature", "MapFiltering")]
+        [Trait("Type", "UI_Validation")]
+        public void Filter_NoEventsInCategory_ShouldShowEmptyMapMessage()
+        {
+            var result = _mapService
+                .WithEvents(new List<Event>())
+                .ApplyFilter(Category.Educational);
+
+            result.VisibleMarkers.Should().BeEmpty();
+            result.EmptyStateMessage.Should().Be("Nu am găsit evenimente",
+                "because the user needs feedback when a filter returns no results");
+        }
+
+        [Fact]
+        [Trait("Feature", "MapFiltering")]
+        [Trait("Type", "Logic_Intersection")]
+        public void Filter_SearchByText_AndCategory_ShouldIntersect()
+        {
+            var events = new List<Event> {
+                new Event { Title = "Meci Fotbal", Category = Category.Sports },
+                new Event { Title = "Antrenament Baschet", Category = Category.Sports },
+                new Event { Title = "Meci Gaming", Category = Category.Gaming }
+            };
+
+            var result = _mapService
+                .WithEvents(events)
+                .SearchText("Meci")
+                .ApplyFilter(Category.Sports);
+
+            result.VisibleMarkers.Should().HaveCount(1);
+            result.VisibleMarkers.First().Label.Should().Be("Meci Fotbal",
+                "because the results should match both the search text and the category simultaneously");
+        }
+
+        [Theory]
+        [InlineData(Category.Gaming, "🎲")]
+        [InlineData(Category.Sports, "⚽")]
+        [Trait("Feature", "MapFiltering")]
+        [Trait("Type", "UI_Consistency")]
+        public void Filter_CategoryIcons_ShouldMatchDesignLabels(Category category, string expectedEmoji)
+        {
+            var @event = new Event { Title = "Test", Category = category, Emoji = expectedEmoji };
+            var marker = _mapService.CreateMarker(@event);
+
+            marker.Emoji.Should().Be(expectedEmoji,
+                $"because the icon for {category} must be consistent with the design system");
+        }
+
+
+        // --- MARKER SYSTEM ---
+
+
+        [Fact]
+        [Trait("Feature", "MapMarkers")]
+        [Trait("Type", "UIValidation")]
+        [Trait("Priority", "P1")]
+        public void Marker_ShouldDisplayCategoryIconAndTitleCorrectly()
+        {
+            var @event = new Event
+            {
+                Title = "Board Games Night",
+                Category = Category.Gaming,
+                Emoji = "🎲"
+            };
+
+            var marker = _mapService.CreateMarker(@event);
+
+            marker.Icon.Should().Be("gaming_icon");
+            marker.Label.Should().Be("Board Games Night");
+        }
+
+        [Theory]
+        [InlineData(Category.Sports, "Green")]
+        [InlineData(Category.Social, "Red")]
+        [InlineData(Category.Outdoor, "Blue")]
+        [Trait("Feature", "MapMarkers")]
+        [Trait("Type", "UIValidation")]
+        public void Marker_Color_ShouldMatchCategoryTheme(Category category, string expectedColor)
+            => _mapService.CreateMarker(new Event { Category = category, Title = "Test" })
+                .ThemeColor.Should().Be(expectedColor, $"because {category} color theme must match the UI design");
+
+        [Fact]
+        [Trait("Feature", "MapMarkers")]
+        [Trait("Type", "Interaction")]
+        [Trait("Priority", "P1")]
+        public void Marker_Click_ShouldOpenEventDetails()
+            => _mapService
+                .WithEvents(SeedData.GetClujEvents())
+                .ClickMarker("Meci de Fotbal")
+                .NavigationPath.Should().Contain("details/Meci de Fotbal");
+
+        [Fact]
+        [Trait("Feature", "MapLogic")]
+        [Trait("Type", "Clustering")]
+        [Trait("Priority", "P2")]
+        public void Marker_Overlap_ShouldBeHandledByClustering()
+        {
+            var overlappingEvents = new List<Event> {
+                new Event { Lat = 46.77, Lon = 23.58, Title = "Event 1", Category = Category.Friends },
+                new Event { Lat = 46.77, Lon = 23.58, Title = "Event 2", Category = Category.Social }
+            };
+
+            _mapService.WithEvents(overlappingEvents)
+                .GetVisibleMarkers().Should().HaveCount(1, "because overlapping events at same coords should be clustered");
+        }
+
+        [Fact]
+        [Trait("Feature", "MapPerformance")]
+        [Trait("Type", "Optimization")]
+        [Trait("Priority", "P2")]
+        public void Marker_OffScreen_ShouldNotRenderToSavePerformance()
+            => _mapService
+                .WithEvents(new List<Event> { new Event { Lat = 44.0, Lon = 20.0, Title = "Departe", Category = Category.Other } })
+                .FocusOnCluj()
+                .RenderedMarkersCount.Should().Be(0, "because markers outside the viewport should not consume resources");
+
+
+        [Fact]
+        [Trait("Feature", "MapMarkers")]
+        [Trait("Type", "Interaction")]
+        [Trait("Priority", "P2")]
+        public void Marker_TapOnCluster_ShouldZoomIn()
+        {
+            var initialZoom = _mapService.CurrentZoom;
+
+            _mapService
+                .ClickCluster(5) 
+                .CurrentZoom.Should().BeGreaterThan(initialZoom,
+                    "because tapping a cluster should zoom in to reveal individual markers");
+        }
+
+        [Fact]
+        [Trait("Feature", "MapMarkers")]
+        [Trait("Type", "DataSync")]
+        [Trait("Priority", "P2")]
+        public void Marker_UpdateEventData_ShouldRefreshMarkerLabel()
+        {
+            var @event = new Event { Title = "Meci Fotbal", Category = Category.Sports };
+            _mapService.WithEvents(new List<Event> { @event });
+
+            @event.Title = "Finală Fotbal";
+            _mapService.SyncVisibleMarkers();
+
+            _mapService.VisibleMarkers.First().Label.Should().Be("Finală Fotbal",
+                "because the map should reflect real-time changes in event data");
+        }
+
+        [Fact]
+        [Trait("Feature", "MapMarkers")]
+        [Trait("Type", "UX_ZIndex")]
+        [Trait("Priority", "P2")]
+        public void Marker_ZIndex_SelectedMarkerShouldBeOnTop()
+        {
+            var result = _mapService
+                .WithEvents(SeedData.GetClujEvents())
+                .ClickMarker("Meci de Fotbal");
+
+            result.GetMarkerByTitle("Meci de Fotbal").ZIndex.Should().Be(999,
+                "because the selected marker must appear above all others to remain visible");
+        }
+
+        [Fact]
+        [Trait("Feature", "MapMarkers")]
+        [Trait("Type", "Logic_Proximity")]
+        [Trait("Priority", "P2")]
+        public void Marker_DistanceLabel_ShouldBeCalculatedFromUserLocation()
+        {
+            double userLat = 46.7712; //Centru
+            double userLon = 23.5892;
+
+            var @event = new Event { Lat = 46.7712, Lon = 23.5992, Title = "Aproape" };
+
+            var marker = _mapService
+                .SetUserLocation(userLat, userLon)
+                .CreateMarker(@event);
+
+            marker.DistanceLabel.Should().NotBeNullOrEmpty();
+            marker.DistanceLabel.Should().Contain("km", "because users need to see the distance to the event");
+        }
+
+
+        [Fact]
+        [Trait("Feature", "MapMarkers")]
+        [Trait("Type", "Boundary")]
+        [Trait("Priority", "P2")]
+        public void Marker_InvalidCoordinates_ShouldNotBeAddedToMap()
+        {
+            var @event = new Event { Lat = 91.0, Lon = 181.0, Title = "Invalid Location" };
+
+            _mapService
+                .WithEvents(new List<Event> { @event })
+                .VisibleMarkers.Should().BeEmpty("because coordinates outside global bounds are invalid");
+        }
+
+        [Fact]
+        [Trait("Feature", "MapMarkers")]
+        [Trait("Type", "UIValidation")]
+        [Trait("Priority", "P3")]
+        public void Marker_Emoji_ShouldMatchEventDefinition()
+        {
+            var @event = new Event { Title = "Party", Emoji = "🥳", Category = Category.Social };
+
+            var marker = _mapService.CreateMarker(@event);
+
+            marker.Emoji.Should().Be("🥳", "because the marker must visually represent the event's specific emoji");
+        }
+
+        [Fact]
+        [Trait("Feature", "MapMarkers")]
+        [Trait("Type", "Functional")]
+        [Trait("Priority", "P1")]
+        public void Marker_ClearEvents_ShouldRemoveAllMarkersFromMap()
+            => _mapService
+                .WithEvents(SeedData.GetClujEvents())
+                .WithEvents(new List<Event>())
+                .VisibleMarkers.Should().BeEmpty("because re-initializing with an empty list must clear the UI");
+
+        [Fact]
+        [Trait("Feature", "MapMarkers")]
+        [Trait("Type", "Performance")]
+        [Trait("Priority", "P2")]
+        public void Marker_MassiveLoad_ShouldHandleLargeNumberOfEvents()
+        {
+            var manyEvents = Enumerable.Range(0, 1000)
+                .Select(i => new Event { Title = $"Event {i}", Lat = 46.77, Lon = 23.58 })
+                .ToList();
+
+            _mapService
+                .WithEvents(manyEvents)
+                .VisibleMarkers.Should().HaveCount(1000, "because the service must support high density event data");
+        }
+
+        [Fact]
+        [Trait("Feature", "MapMarkers")]
+        [Trait("Type", "Logic")]
+        [Trait("Priority", "P2")]
+        public void Marker_InitialState_ShouldHaveDefaultZIndex()
+        {
+            var @event = new Event { Title = "Normal Event", Category = Category.Other };
+
+            var marker = _mapService.CreateMarker(@event);
+
+            marker.ZIndex.Should().Be(1, "because markers should start at the lowest layer before interaction");
+        }
+
+
+        // --- NEARBY PANEL ---
+
+
+        [Fact]
+        [Trait("Feature", "NearbyPanel")]
+        [Trait("Type", "Functional")]
+        [Trait("Priority", "P1")]
+        public void NearbyPanel_ShouldSortEventsByPhysicalDistance()
+        {
+            var farEvent = new Event { Title = "Far", Lat = 47.0, Lon = 24.0 };
+            var closeEvent = new Event { Title = "Close", Lat = 46.77, Lon = 23.59 };
+
+            var result = _mapService
+                .SetUserLocation(46.7712, 23.5892)
+                .WithEvents(new List<Event> { farEvent, closeEvent })
+                .GetNearbyPanelEvents();
+
+            result.First().Title.Should().Be("Close", "because the closest events must appear first in the panel");
+        }
+
+        [Fact]
+        [Trait("Feature", "NearbyPanel")]
+        [Trait("Type", "DynamicUpdate")]
+        [Trait("Priority", "P2")]
+        public void NearbyPanel_DistanceDisplay_ShouldUpdateAsUserMoves()
+        {
+            var @event = new Event { Lat = 46.7712, Lon = 23.6000, Title = "Target" };
+
+            var initialDistance = _mapService
+                .SetUserLocation(46.7712, 23.5892)
+                .CreateMarker(@event).DistanceLabel;
+
+            var updatedDistance = _mapService
+                .SetUserLocation(46.7712, 23.5990)
+                .CreateMarker(@event).DistanceLabel;
+
+            updatedDistance.Should().NotBe(initialDistance, "because labels must reflect the new real-time distance");
+        }
+
+        [Fact]
+        [Trait("Feature", "NearbyPanel")]
+        [Trait("Type", "UI_State")]
+        [Trait("Priority", "P2")]
+        public void NearbyPanel_Expand_ShouldRevealMoreEvents()
+            => _mapService
+                .SetPanelState(PanelState.Collapsed)
+                .Execute(s => s.VisiblePanelItems.Should().BeLessThanOrEqualTo(3))
+                .SetPanelState(PanelState.Expanded)
+                .VisiblePanelItems.Should().BeGreaterThan(3, "because expanding the sheet should load the full list");
+
+        [Fact]
+        [Trait("Feature", "NearbyPanel")]
+        [Trait("Type", "UIValidation")]
+        [Trait("Priority", "P2")]
+        public void NearbyPanel_EmptyState_ShouldShowMessageWhenNoEventsNearby()
+            => _mapService
+                .SetUserLocation(0, 0) //to simulate a location far from any events
+                .WithEvents(SeedData.GetClujEvents())
+                .EmptyStateMessage.Should().Be("Nu am găsit evenimente în apropiere");
+
+        [Fact]
+        [Trait("Feature", "ProximitySystem")]
+        [Trait("Type", "Math")]
+        [Trait("Priority", "P1")]
+        public void Distance_Calculation_ShouldBeAccurateWithin10Meters()
+        {
+            var userLat = 46.7712;
+            var userLon = 23.5892;
+            var eventLat = 46.7713;
+            var eventLon = 23.5893;
+
+            var distance = _mapService.CalculateRawDistance(userLat, userLon, eventLat, eventLon);
+
+            distance.Should().BeInRange(10, 20, "because the Haversine formula must remain precise at small scales");
+        }
+
+        [Theory]
+        [InlineData(0.5, "500 m")]
+        [InlineData(2.5, "2.5 km")]
+        [Trait("Feature", "ProximitySystem")]
+        [Trait("Type", "Logic")]
+        public void Distance_UnitConversion_ShouldShowKmUnder10kmAndMetersUnder1km(double km, string expectedLabel)
+        {
+            var label = _mapService.FormatDistanceLabel(km);
+            label.Should().Be(expectedLabel, "because the UI must switch units for better readability");
+        }
+
+        [Fact]
+        [Trait("Feature", "ProximitySystem")]
+        [Trait("Type", "Safety")]
+        [Trait("Priority", "P1")]
+        public void GPS_LossOfSignal_ShouldShowWarningToUser()
+            => _mapService
+                .SetGpsStatus(GpsStatus.Lost)
+                .SystemWarning.Should().Be("Semnal GPS pierdut", "because users must be notified when location data is stale");
+
+        [Fact]
+        [Trait("Feature", "ProximitySystem")]
+        [Trait("Type", "Performance")]
+        [Trait("Priority", "P3")]
+        public void GPS_BackgroundUpdate_ShouldNotDrainBatteryExcessively()
+            => _mapService
+                .SetUpdateInterval(TimeSpan.FromSeconds(30))
+                .BatteryImpactScore.Should().BeLessThan(5, "because high-frequency updates must be throttled in background");
+
+        [Fact]
+        [Trait("Feature", "ProximitySystem")]
+        [Trait("Type", "Boundary")]
+        [Trait("Priority", "P2")]
+        public void Location_OutsideCluj_ShouldAskToChangeCity()
+        {
+            var bucharestLat = 44.4268;
+            var bucharestLon = 26.1025;
+
+            _mapService
+                .SetUserLocation(bucharestLat, bucharestLon)
+                .CityPromptVisible.Should().BeTrue("because the app should suggest switching cities when the user is far away");
+        }
+
+
+        // --- IN-MEMORY / DB ---
+
+
+        [Fact]
+        [Trait("Feature", "DataIntegrity")]
+        [Trait("Type", "Lifecycle")]
+        [Trait("Priority", "P1")]
+        public void Event_ExpiredTime_ShouldAutomaticallyDisappearFromMap()
+            => _mapService
+                .WithEvents(SeedData.GetExpiredEvents())
+                .ApplyLifeCycleFilters()
+                .VisibleMarkers.Count.Should().Be(0);
+
+        [Fact]
+        [Trait("Feature", "DataIntegrity")]
+        [Trait("Type", "RealTime")]
+        [Trait("Priority", "P1")]
+        public void Event_Update_ShouldReflectInstantlyOnMapWithoutReload()
+            => _mapService
+                .WithEvents(SeedData.GetClujEvents())
+                .UpdateEventTitle(eventId: 1, newTitle: "Updated Title")
+                .VisibleMarkers.First(m => m.Id == 1).Label.Should().Be("Updated Title");
+
+        [Fact]
+        [Trait("Feature", "DataIntegrity")]
+        [Trait("Type", "EdgeCase")]
+        [Trait("Priority", "P2")]
+        public void Event_Concurrency_ShouldHandleTwoEventsAtExactSameCoordinates()
+            => _mapService
+                .WithEvents(new List<Event> 
+                {
+                    new Event { Lat = 46.77, Lon = 23.58 },
+                    new Event { Lat = 46.77, Lon = 23.58 }
+                })
+                .VisibleMarkers.Count
+                .Should().Be(2);
+
+        [Fact]
+        [Trait("Feature", "DataIntegrity")]
+        [Trait("Type", "UI_Action")]
+        [Trait("Priority", "P2")]
+        public void Event_Creation_ButtonPlus_ShouldOpenCorrectForm()
+            => _mapService
+                .ClickMarker("new") 
+                .NavigationPath.Should().Be("details/new");
+
+        [Fact]
+        [Trait("Feature", "DataIntegrity")]
+        [Trait("Type", "UI_Sync")]
+        [Trait("Priority", "P2")]
+        public void Event_CountBadge_ShouldMatchNumberOfMarkersVisible()
+            => _mapService
+                .WithEvents(SeedData.GetClujEvents())
+                .ApplyFilter(Category.Sports)
+                .RenderedMarkersCount 
+                .Should().Be(_mapService.VisibleMarkers.Count);
+
+        // --- ADVANCED LOGIC TESTS ---
+
+
+        [Fact]
+        [Trait("Feature", "Filters")]
+        [Trait("Type", "Persistence")]
+        [Trait("Priority", "P2")]
+        public void Filter_PersistentState_ShouldRemainSelectedAfterOpeningEvent()
+            => _mapService
+                .ApplyFilter(Category.Culture)
+                .ClickMarker("1") 
+                .VisibleMarkers.All(m => m.Category == Category.Culture)
+                .Should().BeTrue();
+
+        [Fact]
+        [Trait("Feature", "Search")]
+        [Trait("Type", "Filtering")]
+        [Trait("Priority", "P2")]
+        public void Search_ByTitle_ShouldFilterMapMarkers()
+            => _mapService
+                .WithEvents(SeedData.GetClujEvents())
+                .SearchText("Concert") 
+                .VisibleMarkers.All(m => m.Label.Contains("Concert", StringComparison.OrdinalIgnoreCase))
+                .Should().BeTrue();
+
+        [Fact]
+        [Trait("Feature", "Search")]
+        [Trait("Type", "Navigation")]
+        [Trait("Priority", "P2")]
+        public void Search_ByLocationName_ShouldCenterMapOnResult()
+            => _mapService
+                .SearchText("Centru") 
+                .VisibleMarkers.Count
+                .Should().BeGreaterThan(0);
+
+        [Fact]
+        [Trait("Feature", "Filters")]
+        [Trait("Type", "Logic")]
+        [Trait("Priority", "P2")]
+        public void Filter_Combination_CategoryAndTime_ShouldWork()
+            => _mapService
+                .ApplyFilter(Category.Social)
+                .ApplyLifeCycleFilters() 
+                .VisibleMarkers.Count
+                .Should().BeLessThanOrEqualTo(SeedData.GetClujEvents().Count);
+
+        [Fact]
+        [Trait("Feature", "Filters")]
+        [Trait("Type", "RealTime")]
+        [Trait("Priority", "P2")]
+        public void Filter_DistanceSlider_ShouldUpdateMapInRealTime()
+            => _mapService
+                .SetUserLocation(46.7712, 23.5892)
+                .FilterByDistance(1) 
+                .VisibleMarkers.All(m => m.Distance <= 1).Should().BeTrue();
+
 
     }
-}
 
+
+
+
+
+    public static class SeedData
+    {
+        public static List<Event> GetClujEvents()
+        {
+            return new List<Event>
+            {
+                new Event { Title = "Meci de Fotbal", Category = Category.Sports, Lat = 46.779, Lon = 23.577, EventZone = Zone.Grigorescu, Emoji = "⚽" },
+                new Event { Title = "Board Games Night", Category = Category.Gaming, Lat = 46.755, Lon = 23.560, EventZone = Zone.Manastur, Emoji = "🎲" },
+                new Event { Title = "Ieșire în Centru", Category = Category.Social, Lat = 46.771, Lon = 23.589, EventZone = Zone.Centru, Emoji = "🍻" }
+            };
+        }
+    }
+}
+       

@@ -554,7 +554,7 @@ namespace SideQuest_Test.SideQuestBLL.Tests.Services
                 _loginService.AddUserForTesting(CreateRequest($"user{i}@test.com", "Complex123!"));
             }
 
-            LoginService.GetUsersForTesting().Count.Should().BeGreaterOrEqualTo(1000);
+            LoginService.GetUsersForTesting().Count.Should().BeGreaterThanOrEqualTo(1000);
             _loginService.Login("user(500)@test.com", "Complex123!"); 
         }
 
